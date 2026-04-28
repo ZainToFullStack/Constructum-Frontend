@@ -1,10 +1,14 @@
 import React from 'react'
 import Footer from './components/Footer'
-// import Navbar from './components/Navbar'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-  <Footer />
+    <div>
+      <Navbar />
+        <Footer />
+    </div>
+
   )
 }
 
