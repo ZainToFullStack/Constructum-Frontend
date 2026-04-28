@@ -1,0 +1,154 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY FIX (important for fixed navbar) */
+body {
+  padding-top: 70px;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 1000;
+}
+
+/* INNER */
+.navbar-inner {
+  max-width: 1300px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-box {
+  width: 24px;
+  height: 24px;
+  background: #ef4444;
+  transform: rotate(45deg);
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: none;
+  gap: 32px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: #ef4444;
+}
+
+/* RIGHT SIDE */
+.nav-right {
+  display: none;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-icon {
+  cursor: pointer;
+  color: #4b5563;
+}
+
+/* BUTTON */
+.cta-btn {
+  background: #ef4444;
+  color: #fff;
+  padding: 8px 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #dc2626;
+}
+
+/* MENU ICON */
+.menu-icon {
+  cursor: pointer;
+}
+
+/* MOBILE MENU (SMOOTH ANIMATION) */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+  transition: max-height 0.3s ease;
+  padding: 0 24px;
+}
+
+.mobile-menu.active {
+  max-height: 300px;
+  padding: 16px 24px;
+}
+
+.mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #374151;
+  font-size: 14px;
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-right {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
+
+  .navbar-inner {
+    padding: 16px 64px;
+  }
+}
