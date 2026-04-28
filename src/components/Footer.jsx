@@ -196,6 +196,18 @@ const Footer = () => {
           border-radius: 50px;
         }
 
+               /* ✅ HOVER EFFECT ADDED */
+        .socialPill svg {
+          color: #aaa;
+          cursor: pointer;
+          transition: all 0.25s ease;
+        }
+
+        .socialPill svg:hover {
+          color: #e35e4a;
+          transform: translateY(-3px) scale(1.15);
+        }
+          
         .scrollTopBtn {
           position: absolute;
           right: 40px;
@@ -233,6 +245,8 @@ const Footer = () => {
           <div>
             <h4>New York</h4>
             <p className="address">523 Sylvan Ave, CA</p>
+
+            <h4>Follow us</h4>
             <div className="socialPill">
               <Twitter />
               <Facebook />
@@ -244,20 +258,28 @@ const Footer = () => {
           <div>
             <h4>Phone</h4>
             <p className="infoText">+1 234 719 8948</p>
+              <h4>Email</h4>
+  <p className="infoText">Interested in working with us?</p>
           </div>
+<div>
 
-          <div>
-            <h4>Menu</h4>
+
+            <h4>Main Menu</h4>
             <ul className="navList">
               <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Our Projects</a></li>
+              <li><a href="#">Products</a></li>
             </ul>
           </div>
 
           <div>
             <ul className="navList">
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Team</a></li>
               <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="#">Contacts</a></li>
             </ul>
           </div>
         </div>
