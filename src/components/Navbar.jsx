@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Search, Menu } from "lucide-react";
+// 1. Import your logo image (ensure the path is correct)
+import logoImg from "../assets/logo34.png"; 
 import "../style/navbar.css";
 
 const Navbar = () => {
@@ -10,9 +12,14 @@ const Navbar = () => {
       <div className="navbar-inner">
 
         {/* LEFT: LOGO */}
-        <div className="logo">
-          <div className="logo-box"></div>
-          <h1 className="logo-text">CONSTRUCTUM</h1>
+        <div className="logo-container">
+          <a href="/">
+            <img 
+              src={logoImg} 
+              alt="Constructum Logo" 
+              className="navbar-logo" 
+            />
+          </a>
         </div>
 
         {/* CENTER: NAV LINKS */}

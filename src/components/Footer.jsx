@@ -239,7 +239,7 @@ const Footer = () => {
         <div className="footerGrid">
           <div>
             <h2>Constructum</h2>
-            <h3 className="sinceText">since the 80's</h3>
+            <h3 className="sinceText">Since the 80's</h3>
           </div>
 
           <div>
