@@ -1,140 +1,373 @@
-.footer {
-  background-color: #121212;
-  color: #ffffff;
-  padding: 80px 8% 40px 8%;
-  font-family: sans-serif;
-  position: relative;
+.footerMain {
+  background-color: #111;
+  color: #fff;
+  padding: 100px 5% 40px;
+  font-family: 'Inter', sans-serif;
 }
 
-.footerTop {
+/* --- SECTION 1: CONTACT SECTION --- */
+.contactSection {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 40px;
+  gap: 80px;
+  margin-bottom: 120px;
+  align-items: flex-start;
 }
 
-.headline {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+/* WHITE CARD */
+.contactCard {
+  background: #ebebeb;
+  color: #000;
+  padding: 60px 40px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.contactForm{
+  text-decoration-color: #000;
+}
+
+.contactCard h2 {
+  font-size: 42px;
   font-weight: 500;
-  line-height: 1.1;
-  margin: 0;
-}
-
-.contactLink {
-  color: #e35e4a;
-  text-decoration: none;
-  font-weight: bold;
-  border-bottom: 1px solid #e35e4a;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding-bottom: 5px;
-  transition: transform 0.3s;
-}
-
-.divider {
-  border: 0;
-  border-top: 1px solid #2a2a2a;
-  margin-bottom: 60px;
-}
-
-.footerGrid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 0.8fr;
-  gap: 40px;
-}
-
-/* Specific styling for the outlined text */
-.sinceText {
-  font-size: 3rem;
-  font-weight: 900;
-  font-style: italic;
-  margin: 10px 0 30px 0;
-  color: transparent;
-  -webkit-text-stroke: 1px #e35e4a;
-}
-
-.column h4 {
-  font-size: 1rem;
   margin-bottom: 20px;
-  text-transform: capitalize;
 }
 
-.address, .infoText, .navList li a {
-  color: #a0a0a0;
-  font-size: 0.9rem;
+.contactCard p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 40px;
   line-height: 1.6;
 }
 
-.socialPill {
-  display: inline-flex;
-  align-items: center;
-  gap: 15px;
-  border: 1px solid #2a2a2a;
-  padding: 8px 15px;
-  border-radius: 50px;
-  margin-top: 10px;
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.iconActive {
-  background-color: #e35e4a;
-  padding: 6px;
-  border-radius: 50%;
+/* Contact Card ke andar jitne bhi input aur textarea hain unka text color */
+.contactForm input, 
+.contactForm textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  outline: none;
+  font-size: 14px;
+  
+  /* 🔥 Text color ko black/dark grey set karein */
+  color: #222 !important; 
+}
+
+/* Placeholder ka color thoda light rakhne ke liye (optional) */
+.contactForm input::placeholder, 
+.contactForm textarea::placeholder {
+  color: #888;
+}
+
+/* Jab user likh raha ho (focus state) tab border thoda dark ho jaye */
+.contactForm input:focus, 
+.contactForm textarea:focus {
+  border-bottom: 1px solid #333;
+}
+/* 
+.sendBtn {
+  margin-top: 30px;
+  background: transparent;
+  border: none;
+  color: #AA925E;
+  font-weight: bold;
+  font-size: 13px;
   display: flex;
   align-items: center;
-}
-
-.navList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navList li {
-  margin-bottom: 12px;
-}
-
-.activeLink {
-  color: #e35e4a !important;
-}
-
-.emailLink {
-  color: #e35e4a;
-  text-decoration: underline;
-  font-size: 0.9rem;
-}
-
-.scrollTopBtn {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  background-color: #e35e4a;
-  border: none;
-  color: white;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
+  gap: 10px;
   cursor: pointer;
+  width: fit-content;
+  border-bottom: 1px solid #AA925E;
+  padding-bottom: 5px;
+} */
+.sendBtn {
+  margin-top: 40px;
+  background: transparent;
+  border: none;
+  color: #AA925E;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 100%;
+  max-width: 220px;
+  outline: none;
+  
+  /* 🔥 Straight Underline (No curve) */
+  border-bottom: 1px solid #AA925E; 
+  padding-bottom: 10px;
+  border-radius: 0; /* Kisi bhi qism ka curve khatam karne ke liye */
+  
+  transition: border-color 0.3s ease;
+}
+
+
+
+/* RIGHT INFO */
+.infoSection {
+  flex: 1;
+}
+
+.subTag {
+  color: #AA925E;
+  font-size: 13px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.mainHeadline {
+  font-size: 58px;
+  line-height: 1.1;
+  font-weight: 500;
+  margin-bottom: 60px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.infoGrid h4 {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.infoGrid p {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 10px;
+}
+
+.socialIcons a {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #333;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s;
+  color: #fff;
+  transition: 0.3s;
 }
 
-/* Responsiveness */
+.socialIcons a:hover {
+  background: #AA925E;
+  border-color: #AA925E;
+}
+
+.emailLink {
+  color: #AA925E;
+  text-decoration: none;
+}
+
+.estDate {
+  font-size: 130px;
+  font-weight: 500;
+  color: #AA925E; /* Halka shade jaisy pic mein background pe hai */
+  margin-top: 40px;
+  letter-spacing: -5px;
+}
+
+/* --- SECTION 2: BOTTOM FOOTER --- */
+.footerBottom {
+  border-top: 1px solid #222;
+  padding-top: 60px;
+}
+
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 2fr;
+  gap: 100px;
+}
+
+.footerLogo { width: 180px; margin-bottom: 20px; }
+
+.brandCol p { color: #888; font-size: 13px; line-height: 1.6; }
+
+.newsletterCol h4, .menuCol h4 { margin-bottom: 25px; font-size: 16px; }
+
+.subscribeField {
+  display: flex;
+  border-bottom: 1px solid #333;
+  margin-top: 30px;
+}
+
+.subscribeField input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 10px 0;
+  flex: 1;
+  outline: none;
+}
+
+.subscribeField button {
+  background: transparent;
+  border: none;
+  color: #AA925E;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dualMenu {
+  display: flex;
+  gap: 60px;
+}
+
+.dualMenu ul { list-style: none; padding: 0; }
+.dualMenu li { margin-bottom: 12px; }
+.dualMenu li a { color: #888; text-decoration: none; font-size: 14px; transition: 0.3s; }
+.dualMenu li a:hover { color: #fff; }
+
+
+/* --- Dual Menu List Items Styling --- */
+.dualMenu ul li {
+  margin-bottom: 12px;
+  list-style: none;
+}
+
+.dualMenu ul li a {
+  position: relative;
+  color: #888; /* Default color */
+  text-decoration: none;
+  font-size: 14px;
+  padding-left: 0;
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+}
+
+/* 🔥 Slash Effect (Left Side) */
+.dualMenu ul li a::before {
+  content: "/";
+  position: absolute;
+  left: -15px; 
+  opacity: 0;
+  color: #AA925E; /* Specified Color */
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* 🔥 Underline Effect (Bottom) */
+.dualMenu ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background-color: #AA925E; /* Specified Color */
+  transition: all 0.3s ease;
+}
+
+/* --- HOVER EFFECTS --- */
+
+.dualMenu ul li a:hover {
+  color: #fff; /* Hover par text white ho jaye */
+  padding-left: 15px; /* Slash ke liye jagah banane ke liye move hoga */
+}
+
+/* Slash ko dikhana */
+.dualMenu ul li a:hover::before {
+  opacity: 1;
+  left: 0;
+}
+
+/* Underline ko full width karna */
+.dualMenu ul li a:hover::after {
+  width: 100%;
+}
+
+.footerLegal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  font-size: 12px;
+  color: #555;
+}
+
+/* Pehle arrow ka color define kar do */
+.scrollTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #998455; 
+  color: black; /* Default arrow color black */
+  width: 50px;
+  height: 80px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: all 0.3s ease; /* Transition ko 'all' kar diya taaki color bhi smooth badle */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Hover par background aur arrow (color) dono change honge */
+.scrollTopBtn:hover {
+  transform: translateY(-5px);
+  background-color: #998455;
+  color: white; /* Yeh arrow ko white kar dega */
+}
+
+/* Naya code bas yahan se add karein, baaki waisa hi rehne dein */
+/* .scrollTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px; */
+  /* background-color: #998455; Orange shade from image */
+  /* color: black;
+  width: 50px;
+  height: 80px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.scrollTopBtn:hover {
+  transform: translateY(-5px);
+  background-color: #998455;
+} */
+
+@media (max-width: 768px) {
+  .scrollTopBtn {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 70px;
+  }
+}
+
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-  .footerGrid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .footerTop {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .footerGrid {
-    grid-template-columns: 1fr;
-  }
+  .contactSection { flex-direction: column; }
+  .mainHeadline { font-size: 40px; }
+  .bottomGrid { grid-template-columns: 1fr; gap: 50px; }
 }

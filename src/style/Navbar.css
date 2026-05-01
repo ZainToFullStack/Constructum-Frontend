@@ -5,10 +5,94 @@
   box-sizing: border-box;
 }
 
-/* BODY FIX (important for fixed navbar) */
-body {
-  padding-top: 70px;
-  font-family: Arial, sans-serif;
+/* 🔥 TOP BLACK BAR */
+.topbar {
+  width: 100%;
+  background: #111;
+  color: #fff;
+  font-size: 13px;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.topbar span {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.topbar span:hover {
+  color: #AA925E;
+}
+
+
+/* Pehle wala code waisa hi rahega, bas ye extra add karlo */
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Text aur socials ke darmiyan gap */
+}
+
+.topbar-socials {
+  display: flex;
+  align-items: center;
+  /* Pehle icon se pehle wali line */
+  border-left: 1px solid rgba(255, 255, 255, 0.2); 
+  height: 100%; /* Pure topbar ki height */
+}
+
+.topbar-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px; /* Box ki width */
+  height: 100%;    /* Line ko upar se niche tak rakhta hai */
+  text-decoration: none;
+  
+  /* Har box ke right par vertical white line */
+  border-right: 1px solid rgba(255, 255, 255, 0.2); 
+  
+  /* background-color yahan se hata diya taake pura box highlight na ho */
+}
+
+/* 🔥 Naya Hover Style: Sirf Icon ke liye */
+.topbar-socials a svg {
+  color: white; /* Default white color */
+  transition: all 0.3s ease;
+  font-size: 14px; /* Icon ka size setup */
+}
+
+.topbar-socials a:hover svg {
+  color: #AA925E; /* Hover karne par sirf icon ka color change hoga */
+  transform: scale(1.1); /* Chota sa smooth zoom affect (Optional) */
+}
+
+/* Mobile responsive ke liye gap thoda kam */
+@media (max-width: 600px) {
+  .topbar-socials {
+    border-left: none;
+    padding-left: 0;
+    margin-top: 5px;
+  }
+}
+
+/* 🔻 MOBILE TOPBAR FIX */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
 }
 
 /* NAVBAR */
@@ -17,68 +101,36 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: #ffffff;
+  background: #fff;
   border-bottom: 1px solid #e5e5e5;
   z-index: 1000;
+}
+
+/* BODY SPACE */
+body {
+  padding-top: 130px;
 }
 
 /* INNER */
 .navbar-inner {
   max-width: 1300px;
   margin: auto;
-  padding: 16px 24px;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 /* LOGO */
-/* .logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo-box {
-  width: 24px;
-  height: 24px;
-  background: #ef4444;
-  transform: rotate(45deg);
-}
-
-.logo-text {
-  font-size: 18px;
-  font-weight: 600;
-  color: #111;
-} */
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
 .navbar-logo {
-    /* Adjust these values based on your specific logo's proportions */
-    height: 290px; 
-    width: auto;
-    display: block;
-    object-fit: contain;
-    /* Optional: filter: drop-shadow(...) if you want that same glow from the footer */
-}
-
-/* Ensure the navbar-inner uses flexbox to keep the logo aligned */
-.navbar-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    height: 80px; /* Example height */
+  height: 70px;
+  width: auto;
 }
 
 /* NAV LINKS */
 .nav-links {
   display: none;
-  gap: 32px;
+  gap: 28px;
 }
 
 .nav-links a {
@@ -86,15 +138,45 @@ body {
   font-size: 14px;
   color: #374151;
   font-weight: 500;
+  position: relative;
   transition: 0.3s;
-  cursor: pointer;
 }
+
+/* 🔥 HOVER EFFECT (Underline + Slash) */
+/* .nav-links a::before {
+  content: "/";
+  position: absolute;
+  left: -12px;
+  opacity: 0;
+  color: #AA925E;
+  transition: 0.3s;
+} */
+
+/* .nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #AA925E;
+  transition: 0.3s;
+} */
 
 .nav-links a:hover {
-  color: #ef4444;
+  color: #AA925E;
 }
 
-/* RIGHT SIDE */
+.nav-links a:hover::before {
+  opacity: 1;
+  left: -8px;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* RIGHT */
 .nav-right {
   display: none;
   align-items: center;
@@ -103,22 +185,55 @@ body {
 
 .search-icon {
   cursor: pointer;
-  color: #4b5563;
 }
 
 /* BUTTON */
-.cta-btn {
-  background: #ef4444;
+/* .cta-btn {
+  background: #AA925E;
   color: #fff;
-  padding: 8px 20px;
+  padding: 8px 18px;
   font-size: 14px;
   border: none;
   cursor: pointer;
   transition: 0.3s;
+} */
+ .cta-btn {
+  /* Background hatane ke liye */
+  background: transparent; 
+  
+  /* Image ke mutabiq orange-red border */
+  border: 1.5px solid #998455; 
+  
+  /* Text color (blackish jaisa image mein hai) */
+  color: #333; 
+  
+  /* Pill shape banane ke liye high border-radius */
+  border-radius: 280px; 
+  
+  /* Padding thodi barha dein taake pill shape sahi lage */
+  padding: 10px 30px; 
+  
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
 }
 
+/* Hover effect taake button active lage */
+/* .cta-btn:hover {
+  background: rgb(235, 93, 50);
+  color: #fff; 
+} */
+
+
+
 .cta-btn:hover {
-  background: #dc2626;
+  background: #8a713d;
+  color: #fff;
 }
 
 /* MENU ICON */
@@ -126,34 +241,41 @@ body {
   cursor: pointer;
 }
 
-/* MOBILE MENU (SMOOTH ANIMATION) */
+/* MOBILE MENU */
 .mobile-menu {
   max-height: 0;
   overflow: hidden;
   background: #fff;
   border-top: 1px solid #e5e5e5;
-  transition: max-height 0.3s ease;
-  padding: 0 24px;
+  transition: 0.4s ease;
+  padding: 0 20px;
 }
 
 .mobile-menu.active {
-  max-height: 300px;
-  padding: 16px 24px;
+  max-height: 400px;
+  padding: 15px 20px;
 }
 
 .mobile-menu nav {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 15px;
 }
 
 .mobile-menu a {
   text-decoration: none;
   color: #374151;
-  font-size: 14px;
+  font-size: 15px;
 }
 
-/* DESKTOP */
+/* 📱 TABLET */
+@media (min-width: 768px) {
+  .navbar-logo {
+    height: 80px;
+  }
+}
+
+/* 💻 DESKTOP */
 @media (min-width: 1024px) {
   .nav-links {
     display: flex;
@@ -172,6 +294,6 @@ body {
   }
 
   .navbar-inner {
-    padding: 16px 64px;
+    padding: 16px 60px;
   }
 }

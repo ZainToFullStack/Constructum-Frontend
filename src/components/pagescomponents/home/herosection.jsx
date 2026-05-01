@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
-const herosection = () => {
+const Herosection = () => {
   return (
     <section className="bg-[#f3f3f3] pt-28 pb-20 px-10 lg:px-20">
       <div className="grid lg:grid-cols-2 gap-10 items-center">
@@ -33,7 +33,7 @@ const herosection = () => {
   );
 };
 
-export default herosection;
+export default Herosection;
 
 
 
