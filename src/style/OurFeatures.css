@@ -1,0 +1,221 @@
+/* --- Features Section Layout --- */
+.features-section {
+  padding: 100px 8%;
+  background-color: #f5f5f5; /* Light grey background */
+  font-family: 'Arial', sans-serif;
+}
+
+.features-container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Image & Stripes Logic --- */
+.features-image-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+/* --- Image Wrapper & Mask Logic --- */
+.main-feature-img {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 550px;
+  overflow: visible; /* Decorative stripes ko bahar dikhane ke liye */
+}
+
+.main-feature-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ye mask image ko waisa hi cut dega jaisa picture mein hai */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 25% 100%, 25% 85%, 0% 85%);
+}
+
+/* White Decorative Stripes (Slanted style like the photo) */
+.decorative-stripes {
+  position: absolute;
+  bottom: -10px; /* Image ke cut ke bilkul sath */
+  left: -20px;
+  width: 280px;
+  height: 180px;
+  /* Slanted lines pattern as seen in image */
+  background: repeating-linear-gradient(
+    135deg,
+    white,
+    white 12px,
+    transparent 12px,
+    transparent 25px
+  );
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* .main-feature-img {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 550px;
+  overflow: hidden;
+}
+
+.main-feature-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+/* Decorative Stripes: Straight Vertical Lines */
+/* .decorative-stripes {
+  position: absolute;
+  bottom: 20px;
+  left: -20px;
+  width: 180px;
+  height: 120px;
+  background: repeating-linear-gradient(
+    90deg,
+    white,
+    white 4px,
+    transparent 4px,
+    transparent 15px
+  );
+  z-index: 2;
+  opacity: 0.9;
+} */
+
+/* --- Content Side --- */
+.features-content {
+  flex: 1.2;
+}
+
+.section-tag {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.features-main-title {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+}
+
+/* --- Tabs Styling --- */
+.features-tabs {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 0; /* Margin 0 taake niche wali line se attach ho sake */
+  position: relative;
+}
+
+/* Tab Buttons */
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 15px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #888; /* Default Grey */
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.tab-btn i {
+  font-size: 1.2rem;
+}
+
+/* Active Tab: Bronze Color */
+.tab-btn.active {
+  color: #998455 !important;
+}
+
+.tab-btn.active i {
+  color: #998455;
+}
+
+/* Tab Divider: Base Black Line */
+.tab-divider {
+  width: 100%;
+  height: 2px;
+  background-color: #000000; /* Pure Black Base */
+  margin-top: -2px; /* Pulling the line up to meet buttons */
+  border: none;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 30px;
+}
+
+/* Bronze Underline: Attached & Overlapping the Black Line */
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* Slightly thicker than black line for overlap visibility */
+  background-color: #998455; /* Bronze color */
+  
+  /* Sharp Edges & Overlap Logic */
+  border-radius: 0 !important; 
+  transform: translateY(2px) !important; /* Overlaps perfectly on the black line */
+  z-index: 3;
+}
+
+/* --- Description & Links --- */
+.features-description p {
+  color: #444;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.explore-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #998455; /* Bronze Link */
+  font-weight: bold;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #998455;
+  padding-bottom: 4px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.explore-link:hover {
+  opacity: 0.8;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 1024px) {
+  .features-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+  
+  .features-tabs {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .main-feature-img {
+    margin: 0 auto;
+  }
+  
+  .features-main-title {
+    font-size: 2.5rem;
+  }
+}

@@ -6,6 +6,7 @@ import HeroSection from './components/pagescomponents/home/HeroSection'
 import GridSection from './components/GridSection'
 import Services from './components/Services'
 import AboutCompanySection from './components/AboutCompanySection'
+import OurFeatures from './components/OurFeatures'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Services />
       <InlineMarquee />
       <AboutCompanySection />
+      <OurFeatures />
       <Footer />
     </div>
 
