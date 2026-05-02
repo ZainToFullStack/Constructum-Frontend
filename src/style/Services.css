@@ -1,0 +1,143 @@
+/* Color Palette: Black, White, #998455 */
+:root {
+  --bronze: #998455;
+  --black: #000000;
+  --white: #ffffff;
+  --text-grey: #555555;
+}
+
+.services-section {
+  background-color: var(--white);
+  padding: 100px 8%;
+  font-family: 'Arial', sans-serif;
+}
+
+.services-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header Styling */
+.services-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; 
+  margin-bottom: 80px;
+}
+
+.breadcrumb {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-grey);
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.main-heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--black);
+  margin: 0;
+}
+
+.more-link {
+  text-decoration: none;
+  color: var(--bronze);
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--bronze);
+  padding-bottom: 5px;
+  transition: 0.3s;
+}
+
+.more-link:hover {
+  opacity: 0.7;
+}
+
+/* Grid Styling */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Underline logic: Exactly as per your request (Pure Black) */
+/* Underline logic: Title ke nichay aur Description ke upar */
+.item-divider {
+  width: 100% !important;
+  height: 1px !important;
+  background-color: #000000 !important; /* Pure Black with !important */
+  margin-bottom: 25px !important; 
+  margin-top: 15px !important;    
+  position: relative;
+  display: block !important;
+  opacity: 1 !important;
+  border: none !important;
+}
+
+/* Hover par bhi black hi rahay ga, bronze nahi hoga */
+.service-item:hover .item-divider {
+  background-color: var(--bronze) !important;
+}
+
+
+/* 1. Jab poore card par hover ho toh Icon bronze ho jaye */
+.service-item:hover .icon-box {
+  color: var(--bronze) !important;
+  transition: color 0.3s ease;
+}
+
+/* 2. Jab hover ho toh Title bronze ho jaye */
+.service-item:hover .service-title {
+  color: var(--bronze) !important;
+  transition: color 0.3s ease;
+}
+
+
+
+.icon-box {
+  font-size: 2.8rem; 
+  color: #333333;
+  margin-bottom: 25px;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--black);
+  margin: 0;
+}
+
+.service-desc {
+  font-size: 1.05rem;
+  color: var(--text-grey);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile View */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main-heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

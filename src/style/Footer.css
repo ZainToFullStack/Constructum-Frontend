@@ -70,22 +70,7 @@
 .contactForm textarea:focus {
   border-bottom: 1px solid #333;
 }
-/* 
-.sendBtn {
-  margin-top: 30px;
-  background: transparent;
-  border: none;
-  color: #AA925E;
-  font-weight: bold;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  width: fit-content;
-  border-bottom: 1px solid #AA925E;
-  padding-bottom: 5px;
-} */
+
 .sendBtn {
   margin-top: 40px;
   background: transparent;
@@ -329,32 +314,6 @@
   background-color: #998455;
   color: white; /* Yeh arrow ko white kar dega */
 }
-
-/* Naya code bas yahan se add karein, baaki waisa hi rehne dein */
-/* .scrollTopBtn {
-  position: fixed;
-  bottom: 40px;
-  right: 40px; */
-  /* background-color: #998455; Orange shade from image */
-  /* color: black;
-  width: 50px;
-  height: 80px;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.scrollTopBtn:hover {
-  transform: translateY(-5px);
-  background-color: #998455;
-} */
 
 @media (max-width: 768px) {
   .scrollTopBtn {

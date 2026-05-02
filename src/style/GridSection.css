@@ -1,0 +1,162 @@
+/* Color Palette: Black, White, #998455 */
+:root {
+  --metallic-bronze: #998455;
+  --black: #000000;
+  --white: #ffffff;
+  --transition-slow: 0.5s ease;
+}
+
+.grid-section {
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif; /* Clean sans-serif font */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+  width: 90%;
+  height: 80%;
+  gap: 1px; /* Subtle line between columns */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grid-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Text at bottom */
+  overflow: hidden;
+  background-color: var(--black);
+}
+
+.item-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  transition: transform var(--transition-slow);
+}
+
+/* Grayscale effect for Right image */
+.grid-item .grayscale {
+  filter: grayscale(100%);
+}
+
+/* Text Content Area */
+.item-content {
+  position: relative;
+  z-index: 10;
+  padding: 40px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.align-right {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.item-divider {
+  width: 60px;
+  border: none;
+  border-top: 2px solid var(--metallic-bronze);
+  margin-bottom: 20px;
+  margin-left: 0;
+  transition: width var(--transition-slow);
+}
+
+.align-right .item-divider {
+  margin-left: auto; /* Right alignment for divider */
+}
+
+.item-text {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  text-transform: uppercase; /* Match uppercase text from image */
+  letter-spacing: 1px;
+}
+
+/* ----- Center Mask Column Styling ----- */
+
+.item-center {
+  background-color: var(--black); /* Solid bronze background */
+  justify-content: center; /* Center mask vertically */
+}
+
+.mask-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.geometric-mask {
+  width: 250px;
+  height: 400px;
+  /* Complex geometric 'S' mask using clip-path (identical to image) */
+  clip-path: polygon(
+    0% 30%, 
+    10% 25%, 
+    40% 15%, 
+    60% 0%, 
+    100% 10%, 
+    90% 40%, 
+    100% 70%, 
+    60% 85%, 
+    40% 100%, 
+    10% 80%, 
+    0% 60%, 
+    30% 60%, 
+    40% 70%, 
+    60% 70%, 
+    60% 50%, 
+    30% 40%, 
+    10% 40%
+  );
+  position: relative;
+  background-color: var(--black);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* 3D effect */
+  overflow: hidden;
+}
+
+.welder-image {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+/* Hover Effects (Subtle movement) */
+.grid-item:hover .item-image,
+.grid-item:hover .welder-image {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.grid-item:hover .item-divider {
+  width: 100px; /* Expand divider on hover */
+}
+
+/* Mobile Responsiveness (Stacking on mobile) */
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .grid-section {
+    height: auto;
+    padding: 50px 0;
+  }
+}

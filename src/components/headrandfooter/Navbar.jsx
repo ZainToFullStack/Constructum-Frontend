@@ -9,21 +9,6 @@ const Navbar = () => {
 
   return (
     <header className="navbar">
-
-      {/* 🔥 TOP BLACK BAR */}
-      {/* <div className="topbar">
-        <div className="topbar-left">
-          <span>Services</span>
-          <span>FAQ</span>
-          <span>Pricing Plans</span>
-        </div>
-
-        <div className="topbar-right">
-          <span>Call us: +1 (800) 987 456 98</span>
-          <span>Mail us: constructum@mail.com</span>
-        </div>
-      </div> */}
-
       <div className="topbar">
       <div className="topbar-left">
         <span>Services</span>
