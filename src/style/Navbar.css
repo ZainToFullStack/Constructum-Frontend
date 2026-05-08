@@ -1,27 +1,30 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* =========================
+   🔥 TOP BAR
+========================= */
 
-/* 🔥 TOP BLACK BAR */
 .topbar {
   width: 100%;
-  background: #111;
   color: #fff;
-  font-size: 13px;
-  padding: 8px 20px;
+  padding: 8px 30px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+
+  font-size: 14px;
+
+  background: transparent;
+
+  position: relative;
+  z-index: 1100;
 }
 
 .topbar-left,
 .topbar-right {
   display: flex;
-  gap: 15px;
+  gap: 18px;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -31,231 +34,322 @@
 }
 
 .topbar span:hover {
-  color: #AA925E;
+  color: #AA8F54;
 }
 
-
-/* Pehle wala code waisa hi rahega, bas ye extra add karlo */
-
-.topbar-right {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* Text aur socials ke darmiyan gap */
-}
+/* =========================
+   SOCIALS
+========================= */
 
 .topbar-socials {
   display: flex;
   align-items: center;
-  /* Pehle icon se pehle wali line */
-  border-left: 1px solid rgba(255, 255, 255, 0.2); 
-  height: 100%; /* Pure topbar ki height */
+
+  margin-left: 10px;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .topbar-socials a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 15px; /* Box ki width */
-  height: 100%;    /* Line ko upar se niche tak rakhta hai */
+
+  padding: 0 10px;
+
   text-decoration: none;
-  
-  /* Har box ke right par vertical white line */
-  border-right: 1px solid rgba(255, 255, 255, 0.2); 
-  
-  /* background-color yahan se hata diya taake pura box highlight na ho */
+
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* 🔥 Naya Hover Style: Sirf Icon ke liye */
 .topbar-socials a svg {
-  color: white; /* Default white color */
-  transition: all 0.3s ease;
-  font-size: 14px; /* Icon ka size setup */
+  color: #fff;
+  font-size: 14px;
+  transition: 0.3s ease;
 }
 
 .topbar-socials a:hover svg {
-  color: #AA925E; /* Hover karne par sirf icon ka color change hoga */
-  transform: scale(1.1); /* Chota sa smooth zoom affect (Optional) */
+  color: #AA8F54;
+  transform: translateY(-2px);
 }
 
-/* Mobile responsive ke liye gap thoda kam */
-@media (max-width: 600px) {
-  .topbar-socials {
-    border-left: none;
-    padding-left: 0;
-    margin-top: 5px;
-  }
-}
+/* =========================
+   🔥 STICKY NAVBAR WRAPPER
+========================= */
 
-/* 🔻 MOBILE TOPBAR FIX */
-@media (max-width: 768px) {
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-}
-
-/* NAVBAR */
-.navbar {
-  position: fixed;
+.navbar-wrapper {
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
-  z-index: 1000;
+
+  z-index: 1200;
+
+  padding-top: 12px;
+  margin: -100px 0 0 0;
+  background: transparent;
 }
 
-/* BODY SPACE */
-body {
-  padding-top: 130px;
-}
+/* =========================
+   🧭 MAIN NAVBAR
+========================= */
 
-/* INNER */
-.navbar-inner {
-  max-width: 1300px;
+.navbar {
+  width: 92%;
   margin: auto;
-  padding: 12px 20px;
+
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.22);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 80px;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   INNER
+========================= */
+
+.navbar-inner {
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+
+  margin: auto;
+
+  padding: 0 26px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
 
-/* LOGO */
-.navbar-logo {
-  height: 70px;
-  width: auto;
-}
-
-/* NAV LINKS */
-.nav-links {
-  display: none;
-  gap: 28px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  font-size: 14px;
-  color: #374151;
-  font-weight: 500;
-  position: relative;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  color: #AA925E;
-}
-
-.nav-links a:hover::before {
-  opacity: 1;
-  left: -8px;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* RIGHT */
-.nav-right {
-  display: none;
-  align-items: center;
   gap: 20px;
 }
 
+/* =========================
+   LOGO
+========================= */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 62px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  position: relative;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+
+  color: #ffffff;
+
+  transition: 0.3s ease;
+}
+
+/* HOVER */
+
+.nav-links a:hover {
+  color: #AA8F54;
+}
+
+/* ACTIVE */
+
+.nav-links a.active {
+  color: #AA8F54;
+}
+
+/* PREMIUM UNDERLINE */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 1.5px;
+
+  background: #AA8F54;
+
+  transition: width 0.35s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* =========================
+   RIGHT SECTION
+========================= */
+
+.nav-right {
+  display: none;
+  align-items: center;
+  gap: 18px;
+}
+
+/* SEARCH */
+
 .search-icon {
   cursor: pointer;
+
+  color: #ffffff;
+
+  transition: 0.3s ease;
 }
 
-/* BUTTON */
-/* .cta-btn {
-  background: #AA925E;
-  color: #fff;
-  padding: 8px 18px;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-} */
- .cta-btn {
-  /* Background hatane ke liye */
-  background: transparent; 
-  
-  /* Image ke mutabiq orange-red border */
-  border: 1.5px solid #998455; 
-  
-  /* Text color (blackish jaisa image mein hai) */
-  color: #333; 
-  
-  /* Pill shape banane ke liye high border-radius */
-  border-radius: 280px; 
-  
-  /* Padding thodi barha dein taake pill shape sahi lage */
-  padding: 10px 30px; 
-  
-  font-size: 16px;
+.search-icon:hover {
+  color: #AA8F54;
+  transform: scale(1.08);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.cta-btn {
+  background: transparent;
+
+  border: 1px solid rgba(170, 143, 84, 0.7);
+
+  color: #ffffff;
+
+  border-radius: 999px;
+
+  padding: 10px 24px;
+
+  font-size: 13px;
   font-weight: 500;
+
+  letter-spacing: 0.05em;
+
   cursor: pointer;
+
   transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  outline: none;
 }
-
-/* Hover effect taake button active lage */
-/* .cta-btn:hover {
-  background: rgb(235, 93, 50);
-  color: #fff; 
-} */
-
-
 
 .cta-btn:hover {
-  background: #8a713d;
+  background: #AA8F54;
+
+  border-color: #AA8F54;
+
   color: #fff;
+
+  transform: translateY(-2px);
 }
 
-/* MENU ICON */
+/* =========================
+   MOBILE MENU ICON
+========================= */
+
 .menu-icon {
+  display: flex;
+  align-items: center;
+
   cursor: pointer;
+
+  color: #ffffff;
 }
 
-/* MOBILE MENU */
+/* =========================
+   MOBILE MENU
+========================= */
+
 .mobile-menu {
   max-height: 0;
   overflow: hidden;
-  background: #fff;
-  border-top: 1px solid #e5e5e5;
-  transition: 0.4s ease;
+
+  width: 92%;
+  margin: 10px auto 0;
+
+  background: rgba(10, 10, 10, 0.92);
+
+  backdrop-filter: blur(14px);
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all 0.4s ease;
+
   padding: 0 20px;
 }
 
 .mobile-menu.active {
   max-height: 400px;
-  padding: 15px 20px;
+  padding: 18px 20px;
 }
 
 .mobile-menu nav {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
 .mobile-menu a {
   text-decoration: none;
-  color: #374151;
-  font-size: 15px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: 0.3s ease;
 }
 
-/* 📱 TABLET */
+.mobile-menu a:hover {
+  color: #AA8F54;
+}
+
+/* =========================
+   TABLET
+========================= */
+
 @media (min-width: 768px) {
   .navbar-logo {
-    height: 80px;
+    height: 66px;
   }
 }
 
-/* 💻 DESKTOP */
+/* =========================
+   DESKTOP
+========================= */
+
 @media (min-width: 1024px) {
+
   .nav-links {
     display: flex;
   }
@@ -271,8 +365,38 @@ body {
   .mobile-menu {
     display: none !important;
   }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 6px;
+
+    padding: 10px 18px;
+  }
+
+  .topbar-socials {
+    border-left: none;
+    margin-top: 5px;
+  }
+
+  .navbar {
+    width: 94%;
+    height: 68px;
+  }
 
   .navbar-inner {
-    padding: 16px 60px;
+    padding: 0 18px;
+  }
+
+  .navbar-logo {
+    height: 54px;
   }
 }

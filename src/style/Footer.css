@@ -103,6 +103,11 @@
   flex: 1;
 }
 
+.infoSection h1 {
+  color: white;
+}
+
+
 .subTag {
   color: #AA925E;
   font-size: 13px;
@@ -140,6 +145,39 @@
   gap: 10px;
 }
 
+.socialIcons {
+  display: flex;
+  margin-top: 5px;
+}
+
+/* 🔥 The Pill Container */
+.socialPill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #1a1a1a; /* Dark background for the pill */
+  padding: 5px 15px;
+  border-radius: 50px; /* Makes it a pill shape */
+  border: 1px solid #333;
+}
+
+.socialPill a {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: 0.3s ease;
+  border-radius: 50%; /* Individual icons will stay circular */
+}
+
+/* Hover effect inside the pill */
+.socialPill a:hover {
+  background: #AA925E;
+  color: #000;
+}
+
 .socialIcons a {
   width: 35px;
   height: 35px;
@@ -162,13 +200,13 @@
   text-decoration: none;
 }
 
-.estDate {
+/* .estDate {
   font-size: 130px;
   font-weight: 500;
-  color: #AA925E; /* Halka shade jaisy pic mein background pe hai */
+  color: #AA925E;
   margin-top: 40px;
   letter-spacing: -5px;
-}
+} */
 
 /* --- SECTION 2: BOTTOM FOOTER --- */
 .footerBottom {

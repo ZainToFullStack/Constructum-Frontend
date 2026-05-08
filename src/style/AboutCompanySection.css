@@ -1,126 +1,403 @@
-/* About Section Styles */
+/* ==========================================================
+   PREMIUM ABOUT COMPANY SECTION
+   Fully Responsive • Clean Structure • Premium Layout
+========================================================== */
+
+/* =========================
+   RESET
+========================= */
+
+.about-section *,
+.about-section *::before,
+.about-section *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================
+   ROOT SECTION
+========================================================== */
+
 .about-section {
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  background-color: #d1d1d1; /* Light grey base from image */
-  font-family: 'Arial', sans-serif;
   overflow: hidden;
+  background: #d1d1d1;
+  font-family: "Inter", sans-serif;
 }
 
 .about-container {
-  display: flex;
   width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: stretch;
 }
 
-/* --- Left Side Styling --- */
+/* ==========================================================
+   LEFT SIDE
+========================================================== */
+
 .about-info {
   flex: 1;
-  padding: 80px 10%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  padding: 90px 8%;
 }
+
+/* =========================
+   TAG
+========================= */
 
 .section-tag {
-  font-size: 0.85rem;
-  color: #555;
+  display: inline-block;
+
+  margin-bottom: 22px;
+
+  font-size: 13px;
+  letter-spacing: 1px;
   text-transform: lowercase;
-  margin-bottom: 20px;
-  display: block;
+
+  color: #555;
 }
 
+/* =========================
+   TITLE
+========================= */
+
 .about-title {
-  font-size: 3.5rem;
+  max-width: 560px;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.08;
   font-weight: 700;
-  line-height: 1.1;
-  color: #1a1a1a;
-  margin-bottom: 40px;
-  max-width: 500px;
+
+  color: #111;
+
+  margin-bottom: 34px;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.about-text {
+  width: 100%;
+  max-width: 540px;
 }
 
 .about-text p {
-  font-size: 1rem;
-  line-height: 1.6;
   color: #333;
-  margin-bottom: 25px;
-  max-width: 480px;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  margin-bottom: 28px;
 }
+
+/* =========================
+   LINK
+========================= */
 
 .about-more-link {
+  width: fit-content;
+
   display: inline-flex;
   align-items: center;
+  gap: 8px;
+
+  margin-top: 10px;
+
   text-decoration: none;
-  color: #998455; /* Bronze color */
-  font-weight: bold;
-  font-size: 0.85rem;
-  margin-top: 20px;
+
+  color: #998455;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+
   border-bottom: 1px solid #998455;
-  width: fit-content;
-  padding-bottom: 4px;
+
+  padding-bottom: 6px;
+
+  transition: 0.3s ease;
 }
 
-/* --- Right Side Styling --- */
+.about-more-link:hover {
+  opacity: 0.75;
+}
+
+.arrow {
+  font-size: 16px;
+}
+
+/* ==========================================================
+   RIGHT SIDE
+========================================================== */
+
 .about-objectives {
   flex: 1;
-  background-color: #111; /* Dark black background */
-  padding: 80px 8%;
+
   position: relative;
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
+  background: #111;
+
   color: #fff;
+
+  padding: 90px 8%;
+
+  overflow: hidden;
 }
 
-.objectives-title {
-  font-size: 2.2rem;
-  color: #998455; /* Bronze color heading */
-  margin-bottom: 35px;
-}
+/* =========================
+   CONTENT
+========================= */
 
-.objectives-text p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #ccc;
-  margin-bottom: 25px;
-  max-width: 500px;
-}
-
-/* Big "Since the 80s" text at bottom */
-.since-text {
-  margin-top: auto;
-  font-size: 4.5rem;
-  font-weight: 800;
-  line-height: 1;
-  color: #fff;
+.objectives-content {
+  position: relative;
   z-index: 2;
 }
 
-.since-text span {
-  color: #998455; /* Bronze color for the span */
+/* =========================
+   TITLE
+========================= */
+
+.objectives-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+
+  color: #998455;
+
+  margin-bottom: 36px;
 }
 
-/* Decorative Pattern (Slanted lines) */
+/* =========================
+   TEXT
+========================= */
+
+.objectives-text {
+  width: 100%;
+  max-width: 560px;
+}
+
+.objectives-text p {
+  color: #bdbdbd;
+
+  font-size: 15px;
+  line-height: 1.85;
+
+  margin-bottom: 28px;
+}
+
+/* ==========================================================
+   LARGE BACKGROUND TEXT
+========================================================== */
+
+.since-text {
+  position: relative;
+  z-index: 2;
+
+  margin-top: auto;
+  padding-top: 60px;
+
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+
+  color: #fff;
+}
+
+.since-text span {
+  color: #998455;
+}
+
+/* ==========================================================
+   GRID PATTERN
+========================================================== */
+
 .grid-pattern {
   position: absolute;
-  bottom: 40px;
-  left: 20px;
-  width: 150px;
-  height: 150px;
-  background-image: linear-gradient(135deg, #333 25%, transparent 25%), 
-                    linear-gradient(225deg, #333 25%, transparent 25%);
+
+  left: 30px;
+  bottom: 30px;
+
+  width: 160px;
+  height: 160px;
+
+  opacity: 0.25;
+
+  background-image:
+    linear-gradient(135deg, #2c2c2c 25%, transparent 25%),
+    linear-gradient(225deg, #2c2c2c 25%, transparent 25%);
+
   background-size: 20px 20px;
-  opacity: 0.3;
+
+  pointer-events: none;
 }
 
-/* Responsive Design */
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+/* =========================
+   1400px
+========================= */
+
+@media (max-width: 1400px) {
+  .about-info,
+  .about-objectives {
+    padding: 80px 7%;
+  }
+}
+
+/* =========================
+   1200px
+========================= */
+
+@media (max-width: 1200px) {
+  .about-title {
+    max-width: 100%;
+  }
+
+  .objectives-text,
+  .about-text {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   1024px
+========================= */
+
 @media (max-width: 1024px) {
   .about-container {
     flex-direction: column;
+    min-height: auto;
   }
-  .about-title {
-    font-size: 2.5rem;
+
+  .about-info,
+  .about-objectives {
+    width: 100%;
+    padding: 75px 8%;
   }
+
+  .about-objectives {
+    min-height: 600px;
+  }
+
   .since-text {
-    font-size: 3rem;
+    padding-top: 40px;
+  }
+}
+
+/* =========================
+   768px
+========================= */
+
+@media (max-width: 768px) {
+  .about-info,
+  .about-objectives {
+    padding: 65px 7%;
+  }
+
+  .about-title {
+    line-height: 1.12;
+    margin-bottom: 28px;
+  }
+
+  .objectives-title {
+    margin-bottom: 28px;
+  }
+
+  .about-text p,
+  .objectives-text p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .grid-pattern {
+    width: 120px;
+    height: 120px;
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .since-text {
+    padding-top: 30px;
+  }
+}
+
+/* =========================
+   480px
+========================= */
+
+@media (max-width: 480px) {
+  .about-info,
+  .about-objectives {
+    padding: 55px 6%;
+  }
+
+  .section-tag {
+    margin-bottom: 18px;
+  }
+
+  .about-title {
+    margin-bottom: 24px;
+  }
+
+  .about-text p,
+  .objectives-text p {
+    margin-bottom: 22px;
+  }
+
+  .grid-pattern {
+    width: 90px;
+    height: 90px;
+
+    background-size: 16px 16px;
+  }
+
+  .since-text {
+    font-size: clamp(2.4rem, 10vw, 4rem);
+  }
+}
+
+/* =========================
+   375px
+========================= */
+
+@media (max-width: 375px) {
+  .about-info,
+  .about-objectives {
+    padding: 48px 5%;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .objectives-title {
+    font-size: 1.7rem;
+  }
+
+  .about-text p,
+  .objectives-text p {
+    font-size: 13.5px;
+    line-height: 1.75;
+  }
+
+  .about-more-link {
+    font-size: 11px;
+  }
+
+  .grid-pattern {
+    opacity: 0.18;
   }
 }

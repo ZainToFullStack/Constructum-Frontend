@@ -1,0 +1,518 @@
+/* =========================
+   TESTIMONIAL SECTION - PREMIUM RESTRUCTURED
+   Preserved original design with enhanced responsiveness
+========================= */
+
+.testimonial-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   LEFT SIDE - ENHANCED
+========================= */
+
+.testimonial-left {
+  width: 55%;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.95);
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.testimonial-left:hover img {
+  transform: scale(1.05);
+}
+
+/* TOP BRONZE GRADIENT - Enhanced */
+.top-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    rgba(138, 119, 77, 0.85),
+    rgba(138, 119, 77, 0.3),
+    rgba(138, 119, 77, 0)
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Bottom gradient for better text contrast */
+.bottom-gradient-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* BIG LEFT TEXT - Enhanced */
+.left-text {
+  position: absolute;
+  bottom: 70px;
+  left: 70px;
+  z-index: 10;
+}
+
+.left-text h1 {
+  color: #fff;
+  font-size: clamp(28px, 6vw, 70px);
+  line-height: 0.95;
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+  font-family: "Courier New", "SF Mono", monospace;
+  max-width: 700px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   RIGHT SIDE - PREMIUM REFINEMENTS
+========================= */
+
+.testimonial-right {
+  width: 45%;
+  background: linear-gradient(135deg, #0a0a0a 0%, #0d0d0d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-y: auto;
+}
+
+/* Premium accent strip */
+.premium-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100px;
+  background: linear-gradient(to bottom, #8A774D, transparent);
+  opacity: 0.6;
+}
+
+.content-box {
+  width: 100%;
+  max-width: 550px;
+  padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 60px);
+  position: relative;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HEADING - Responsive */
+.content-box h2 {
+  color: #fff;
+  font-size: clamp(28px, 5vw, 58px);
+  line-height: 1.05;
+  font-weight: 500;
+  margin-bottom: clamp(30px, 6vw, 50px);
+  letter-spacing: -0.02em;
+}
+
+/* QUOTE ICON - Enhanced */
+.quote-icon {
+  color: #8A774D;
+  font-size: clamp(45px, 7vw, 65px);
+  margin-bottom: 20px;
+  line-height: 1;
+  font-family: Georgia, serif;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+.content-box:hover .quote-icon {
+  transform: scale(1.05);
+}
+
+/* PARAGRAPH - Better readability */
+.content-box p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  font-weight: 300;
+  transition: opacity 0.3s ease;
+}
+
+/* NAME - Premium typography */
+.content-box h4 {
+  color: #e8e8e8;
+  font-size: clamp(12px, 1.8vw, 15px);
+  font-weight: 400;
+  margin-bottom: 50px;
+  letter-spacing: 0.5px;
+  border-left: 2px solid #8A774D;
+  padding-left: 16px;
+}
+
+/* DOTS - Interactive */
+.slider-dots {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.slider-dots span {
+  width: 9px;
+  height: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider-dots span.active {
+  background: #8A774D;
+  border-color: #8A774D;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(138, 119, 77, 0.5);
+}
+
+.slider-dots span:hover:not(.active) {
+  border-color: #8A774D;
+  transform: scale(1.2);
+}
+
+/* BOTTOM RIGHT PATTERN - Enhanced */
+.pattern {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  width: clamp(100px, 15vw, 160px);
+  height: clamp(80px, 12vw, 130px);
+  opacity: 0.12;
+  background-image: linear-gradient(#8A774D 1px, transparent 1px),
+    linear-gradient(90deg, #8A774D 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.content-box:hover .pattern {
+  opacity: 0.18;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS - ALL VIEWPORTS
+========================= */
+
+/* Extra Large Screens (1400px - 1800px) */
+@media (max-width: 1600px) {
+  .left-text {
+    left: 60px;
+    bottom: 60px;
+  }
+  
+  .content-box {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .left-text h1 {
+    font-size: 58px;
+  }
+  
+  .content-box h2 {
+    font-size: 48px;
+  }
+  
+  .top-gradient {
+    height: 160px;
+  }
+}
+
+/* Large Screens (1200px - 1400px) */
+@media (max-width: 1280px) {
+  .left-text {
+    left: 50px;
+    bottom: 50px;
+  }
+  
+  .left-text h1 {
+    font-size: 52px;
+  }
+  
+  .content-box h2 {
+    font-size: 44px;
+  }
+}
+
+/* Tablet Breakpoint - Stack Layout */
+@media (max-width: 1200px) {
+  .testimonial-section {
+    flex-direction: column;
+  }
+
+  .testimonial-left,
+  .testimonial-right {
+    width: 100%;
+  }
+
+  .testimonial-left {
+    min-height: 600px;
+  }
+
+  .testimonial-right {
+    min-height: auto;
+  }
+
+  .left-text {
+    left: 60px;
+    bottom: 50px;
+  }
+
+  .left-text h1 {
+    font-size: 58px;
+  }
+  
+  .content-box {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+/* Small Tablets (768px - 1200px) */
+@media (max-width: 992px) {
+  .testimonial-left {
+    min-height: 550px;
+  }
+  
+  .left-text h1 {
+    font-size: 48px;
+  }
+  
+  .content-box h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-left {
+    min-height: 500px;
+  }
+
+  .testimonial-right {
+    min-height: auto;
+  }
+
+  .content-box {
+    padding: 60px 30px;
+  }
+
+  .left-text {
+    left: 30px;
+    bottom: 35px;
+  }
+
+  .left-text h1 {
+    font-size: 40px;
+    line-height: 1.05;
+  }
+
+  .content-box h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .content-box p {
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 32px;
+  }
+  
+  .top-gradient {
+    height: 140px;
+  }
+  
+  .bottom-gradient-layer {
+    height: 150px;
+  }
+}
+
+/* Mobile Landscape (480px - 768px) */
+@media (max-width: 640px) {
+  .testimonial-left {
+    min-height: 450px;
+  }
+  
+  .left-text {
+    left: 25px;
+    bottom: 30px;
+  }
+  
+  .left-text h1 {
+    font-size: 34px;
+  }
+  
+  .content-box {
+    padding: 50px 25px;
+  }
+  
+  .content-box h2 {
+    font-size: 32px;
+  }
+  
+  .content-box p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+/* Mobile Breakpoint (320px - 480px) */
+@media (max-width: 480px) {
+  .testimonial-left {
+    min-height: 400px;
+  }
+  
+  .left-text h1 {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+
+  .content-box h2 {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+
+  .content-box {
+    padding: 40px 20px;
+  }
+
+  .quote-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+  }
+  
+  .content-box p {
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+  
+  .content-box h4 {
+    margin-bottom: 35px;
+    padding-left: 12px;
+  }
+
+  .pattern {
+    width: 90px;
+    height: 70px;
+    background-size: 14px 14px;
+    right: 15px;
+    bottom: 15px;
+  }
+  
+  .slider-dots span {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Extra Small Devices (under 360px) */
+@media (max-width: 360px) {
+  .testimonial-left {
+    min-height: 350px;
+  }
+  
+  .left-text h1 {
+    font-size: 24px;
+  }
+  
+  .content-box h2 {
+    font-size: 24px;
+  }
+  
+  .content-box {
+    padding: 35px 18px;
+  }
+  
+  .quote-icon {
+    font-size: 38px;
+  }
+}
+
+/* Large Desktop Enhancements (1800px+) */
+@media (min-width: 1800px) {
+  .testimonial-section {
+    min-height: 90vh;
+  }
+  
+  .left-text h1 {
+    font-size: 80px;
+  }
+  
+  .content-box {
+    max-width: 620px;
+  }
+  
+  .content-box h2 {
+    font-size: 68px;
+  }
+  
+  .content-box p {
+    font-size: 18px;
+  }
+}
+
+/* Height-based responsiveness */
+@media (max-height: 700px) and (orientation: landscape) {
+  .testimonial-left {
+    min-height: 100vh;
+  }
+  
+  .left-text h1 {
+    font-size: 36px;
+  }
+  
+  .content-box {
+    padding: 40px 30px;
+  }
+}

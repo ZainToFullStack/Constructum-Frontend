@@ -1,8 +1,20 @@
-/* --- Features Section Layout --- */
+:root {
+  --bronze: #998455;
+  --black: #1a1a1a;
+  --gray: #888;
+  --bg: #f5f5f5;
+  --shadow-sm: 0 10px 30px -12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
+  --transition-smooth: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
 .features-section {
-  padding: 100px 8%;
-  background-color: #f5f5f5; /* Light grey background */
-  font-family: 'Arial', sans-serif;
+  padding: 80px 8%;
+  background-color: var(--bg);
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
 }
 
 .features-container {
@@ -11,211 +23,484 @@
   gap: 80px;
   max-width: 1400px;
   margin: 0 auto;
-}
-
-/* --- Image & Stripes Logic --- */
-.features-image-wrapper {
-  flex: 1;
   position: relative;
 }
 
-/* --- Image Wrapper & Mask Logic --- */
+/* Image */
+.features-image-wrapper { 
+  flex: 1; 
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
 .main-feature-img {
   position: relative;
   width: 100%;
   max-width: 450px;
-  height: 550px;
-  overflow: visible; /* Decorative stripes ko bahar dikhane ke liye */
+  height: 520px;
+  overflow: visible;
+  transition: transform 0.4s ease;
 }
 
 .main-feature-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Ye mask image ko waisa hi cut dega jaisa picture mein hai */
+  display: block;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 25% 100%, 25% 85%, 0% 85%);
+  transition: transform 0.5s ease, filter 0.4s ease;
+  filter: brightness(1.01) contrast(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+.main-feature-img:hover img {
+  transform: scale(1.01);
+  filter: brightness(1.04) contrast(1.03);
+}
+
+/* Premium border accent on image */
+.main-feature-img::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(153, 132, 85, 0.15);
+  pointer-events: none;
+  z-index: 1;
+  transition: 0.3s;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 25% 100%, 25% 85%, 0% 85%);
 }
 
-/* White Decorative Stripes (Slanted style like the photo) */
+.main-feature-img:hover::before {
+  border-color: rgba(153, 132, 85, 0.4);
+  top: 8px;
+  left: 8px;
+}
+
 .decorative-stripes {
   position: absolute;
-  bottom: -10px; /* Image ke cut ke bilkul sath */
+  bottom: -10px;
   left: -20px;
-  width: 280px;
-  height: 180px;
-  /* Slanted lines pattern as seen in image */
+  width: 260px;
+  height: 170px;
   background: repeating-linear-gradient(
     135deg,
-    white,
-    white 12px,
-    transparent 12px,
-    transparent 25px
+    white, white 12px,
+    transparent 12px, transparent 25px
   );
   z-index: 5;
   pointer-events: none;
+  transition: opacity 0.3s;
 }
 
-/* .main-feature-img {
-  position: relative;
-  width: 100%;
-  max-width: 450px;
-  height: 550px;
-  overflow: hidden;
-}
-
-.main-feature-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
-
-/* Decorative Stripes: Straight Vertical Lines */
-/* .decorative-stripes {
-  position: absolute;
-  bottom: 20px;
-  left: -20px;
-  width: 180px;
-  height: 120px;
-  background: repeating-linear-gradient(
-    90deg,
-    white,
-    white 4px,
-    transparent 4px,
-    transparent 15px
-  );
-  z-index: 2;
-  opacity: 0.9;
-} */
-
-/* --- Content Side --- */
-.features-content {
+/* Content */
+.features-content { 
   flex: 1.2;
+  position: relative;
 }
 
 .section-tag {
-  color: #888;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-  display: block;
-}
-
-.features-main-title {
-  font-size: 3.2rem;
-  line-height: 1.1;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 40px;
-}
-
-/* --- Tabs Styling --- */
-.features-tabs {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 0; /* Margin 0 taake niche wali line se attach ho sake */
+  color: var(--gray);
+  font-size: 13px;
+  margin-bottom: 14px;
+  display: inline-block;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
   position: relative;
 }
 
-/* Tab Buttons */
+.features-main-title {
+  font-size: clamp(28px, 3.6vw, 52px);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--black);
+  margin: 0 0 36px;
+  letter-spacing: -0.01em;
+}
+
+/* Tabs */
+.features-tabs {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 0;
+}
+
 .tab-btn {
   background: none;
   border: none;
-  padding: 15px 0;
+  padding: 14px 0;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 700;
-  color: #888; /* Default Grey */
-  transition: all 0.3s ease;
+  font-size: 14px;
+  color: var(--gray);
+  transition: color 0.3s ease, transform 0.2s;
   position: relative;
-  z-index: 2;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
 }
 
-.tab-btn i {
-  font-size: 1.2rem;
+.tab-btn i { 
+  font-size: 1.15rem;
+  transition: transform 0.2s;
 }
 
-/* Active Tab: Bronze Color */
-.tab-btn.active {
-  color: #998455 !important;
+.tab-btn:hover {
+  color: #7a6842;
+  transform: translateY(-1px);
 }
 
-.tab-btn.active i {
-  color: #998455;
+.tab-btn.active { 
+  color: var(--bronze); 
+}
+.tab-btn.active i { 
+  color: var(--bronze); 
 }
 
-/* Tab Divider: Base Black Line */
-.tab-divider {
-  width: 100%;
-  height: 2px;
-  background-color: #000000; /* Pure Black Base */
-  margin-top: -2px; /* Pulling the line up to meet buttons */
-  border: none;
-  position: relative;
-  z-index: 1;
-  margin-bottom: 30px;
-}
-
-/* Bronze Underline: Attached & Overlapping the Black Line */
 .tab-btn.active::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 0; 
   left: 0;
   width: 100%;
-  height: 3px; /* Slightly thicker than black line for overlap visibility */
-  background-color: #998455; /* Bronze color */
-  
-  /* Sharp Edges & Overlap Logic */
-  border-radius: 0 !important; 
-  transform: translateY(2px) !important; /* Overlaps perfectly on the black line */
+  height: 3px;
+  background-color: var(--bronze);
+  transform: translateY(2px);
   z-index: 3;
+  border-radius: 2px;
 }
 
-/* --- Description & Links --- */
+.tab-divider {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #000 0%, #000 60%, transparent 100%);
+  border: none;
+  margin: 0 0 28px;
+  position: relative;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* Description - premium readability */
 .features-description p {
-  color: #444;
-  line-height: 1.8;
-  font-size: 1rem;
-  margin-bottom: 20px;
+  color: #2c2c2c;
+  line-height: 1.75;
+  font-size: 15px;
+  margin: 0 0 20px;
   max-width: 600px;
+  transition: opacity 0.2s ease;
+  animation: fadeSlideUp 0.4s ease-out;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .explore-link {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   text-decoration: none;
-  color: #998455; /* Bronze Link */
-  font-weight: bold;
-  font-size: 0.85rem;
-  border-bottom: 1px solid #998455;
-  padding-bottom: 4px;
+  color: var(--bronze);
+  font-weight: 700;
+  font-size: 13px;
+  border-bottom: 1.5px solid var(--bronze);
+  padding-bottom: 5px;
   margin-top: 20px;
-  transition: 0.3s;
+  letter-spacing: 0.06em;
+  transition: all 0.25s ease;
 }
 
 .explore-link:hover {
+  gap: 10px;
   opacity: 0.8;
+  border-bottom-color: #b49b6c;
+  color: #b49b6c;
 }
 
-/* --- Responsive Layout --- */
-@media (max-width: 1024px) {
+.arrow {
+  font-size: 1rem;
+  transition: transform 0.2s;
+}
+
+.explore-link:hover .arrow {
+  transform: translate(3px, -2px);
+}
+
+/* ============================================
+   FULLY RESPONSIVE: ALL VIEWPORTS COVERED
+   ============================================ */
+
+/* Large Desktop (1200px - 1400px) */
+@media (max-width: 1200px) {
   .features-container {
-    flex-direction: column;
-    text-align: center;
     gap: 50px;
   }
-  
-  .features-tabs {
-    justify-content: center;
-    flex-wrap: wrap;
+  .features-main-title {
+    margin-bottom: 30px;
   }
-  
+}
+
+/* Tablet Landscape & Small Desktop (1024px) */
+@media (max-width: 1024px) {
+  .features-section {
+    padding: 70px 6%;
+  }
+  .features-container {
+    flex-direction: column;
+    gap: 56px;
+    text-align: center;
+  }
   .main-feature-img {
     margin: 0 auto;
   }
-  
-  .features-main-title {
-    font-size: 2.5rem;
+  .features-tabs {
+    justify-content: center;
   }
+  .features-description p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+  }
+  .explore-link {
+    justify-content: center;
+  }
+  .features-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tab-divider {
+    margin-bottom: 28px;
+    background: linear-gradient(90deg, #000 30%, #000 70%, transparent 100%);
+  }
+}
+
+/* Tablet Portrait (768px) */
+@media (max-width: 768px) {
+  .features-section {
+    padding: 64px 5%;
+  }
+  .features-main-title {
+    font-size: clamp(26px, 5vw, 38px);
+    margin-bottom: 28px;
+  }
+  .features-tabs {
+    gap: 24px;
+    row-gap: 12px;
+  }
+  .tab-btn {
+    font-size: 13px;
+    padding: 12px 0;
+    white-space: nowrap;
+  }
+  .main-feature-img {
+    height: 460px;
+    max-width: 400px;
+  }
+  .decorative-stripes {
+    width: 220px;
+    height: 145px;
+    bottom: -8px;
+    left: -15px;
+  }
+  .features-description p {
+    font-size: 14px;
+    line-height: 1.68;
+    max-width: 95%;
+  }
+  .features-description p:first-child {
+    animation: none;
+  }
+}
+
+/* Mobile Large (600px) */
+@media (max-width: 600px) {
+  .features-section {
+    padding: 56px 5%;
+  }
+  .features-container {
+    gap: 42px;
+  }
+  .main-feature-img {
+    height: 380px;
+    max-width: 340px;
+  }
+  .decorative-stripes {
+    width: 180px;
+    height: 120px;
+    bottom: -8px;
+    left: -12px;
+    background: repeating-linear-gradient(
+      135deg,
+      white, white 10px,
+      transparent 10px, transparent 20px
+    );
+  }
+  .features-tabs {
+    gap: 18px;
+  }
+  .tab-btn {
+    font-size: 12px;
+    padding: 10px 0;
+    gap: 7px;
+  }
+  .tab-btn i {
+    font-size: 1rem;
+  }
+  .features-main-title {
+    font-size: clamp(24px, 4.5vw, 32px);
+  }
+  .tab-divider {
+    margin: 0 0 24px;
+  }
+  .features-description p {
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+}
+
+/* Mobile Medium (480px) */
+@media (max-width: 480px) {
+  .features-section {
+    padding: 50px 4%;
+  }
+  .features-tabs {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+  }
+  .tab-btn {
+    white-space: normal;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 12px 16px;
+    border-radius: 4px;
+  }
+  .tab-btn.active {
+    background: rgba(153, 132, 85, 0.05);
+    border-bottom-color: var(--bronze);
+  }
+  .tab-btn.active::after {
+    bottom: -1px;
+    height: 2px;
+  }
+  .tab-divider {
+    display: none;
+  }
+  .features-description p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .main-feature-img {
+    height: 330px;
+    max-width: 300px;
+  }
+  .decorative-stripes {
+    width: 150px;
+    height: 100px;
+    bottom: -6px;
+    left: -10px;
+  }
+  .explore-link {
+    margin-top: 18px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile Small (360px) */
+@media (max-width: 360px) {
+  .features-section {
+    padding: 44px 3.5%;
+  }
+  .main-feature-img {
+    height: 280px;
+    max-width: 260px;
+  }
+  .features-main-title {
+    font-size: 1.8rem;
+  }
+  .features-description p {
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+  .decorative-stripes {
+    width: 130px;
+    height: 85px;
+    bottom: -5px;
+    left: -8px;
+    background: repeating-linear-gradient(
+      135deg,
+      white, white 8px,
+      transparent 8px, transparent 16px
+    );
+  }
+  .tab-btn {
+    font-size: 11px;
+    padding: 10px 12px;
+    gap: 6px;
+  }
+}
+
+/* Extra Small (320px) */
+@media (max-width: 320px) {
+  .main-feature-img {
+    height: 250px;
+    max-width: 230px;
+  }
+  .features-main-title {
+    font-size: 1.6rem;
+  }
+  .features-description p {
+    font-size: 12px;
+  }
+  .section-tag {
+    font-size: 11px;
+  }
+}
+
+/* ============================================
+   PREMIUM TOUCHES - SCROLL & ACCESSIBILITY
+   ============================================ */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for better accessibility */
+.tab-btn:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.explore-link:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Optional: subtle parallax/inView effect */
+.features-section {
+  background: linear-gradient(145deg, #f5f5f5 0%, #fafafa 100%);
 }

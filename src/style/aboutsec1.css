@@ -1,0 +1,216 @@
+/* ================= ROOT ================= */
+.about-inspection {
+    position: relative;
+    width: 100%;
+    min-height: 18rem;
+    background-image: url(../assets/homeinspection.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* ================= OVERLAY WITH GRADIENT ================= */
+.about-inspection .about-inspection__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.75) 50%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: 1;
+}
+
+/* ================= CONTAINER ================= */
+.about-inspection .about-inspection__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+}
+
+/* ================= CONTENT ================= */
+.about-inspection .about-inspection__content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* ================= TEXT ================= */
+.about-inspection .about-inspection__text {
+    max-width: 650px;
+    color: #ffffff;
+    position: relative;
+}
+
+/* ================= SUBTITLE ================= */
+.about-inspection .about-inspection__subtitle {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #C09B50;
+    margin-bottom: 0.75rem;
+    background: rgba(192, 155, 80, 0.1);
+    padding: 0.35rem 1rem;
+    border-radius: 3px;
+}
+
+/* ================= TITLE ================= */
+.about-inspection .about-inspection__title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ================= DIVIDER ================= */
+.about-inspection .about-inspection__divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #C09B50 0%, rgba(192, 155, 80, 0.3) 100%);
+    margin-bottom: 1.25rem;
+    border-radius: 2px;
+}
+
+/* ================= DESCRIPTION ================= */
+.about-inspection .about-inspection__description {
+    font-size: 1.1rem;
+    max-width: 550px;
+    border-left: 4px solid #C09B50;
+    padding-left: 1.25rem;
+    line-height: 1.7;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* ================= ACCENT LINE ================= */
+.about-inspection .about-inspection__accent {
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, #C09B50 0%, transparent 100%);
+    opacity: 0.5;
+}
+
+/* ================= RESPONSIVE - TABLET (768px and up) ================= */
+@media (min-width: 768px) {
+    .about-inspection {
+        min-height: 26rem;
+    }
+
+    .about-inspection .about-inspection__container {
+        padding: 3rem 2.5rem;
+    }
+
+    .about-inspection .about-inspection__title {
+        font-size: 2.75rem;
+    }
+
+    .about-inspection .about-inspection__description {
+        font-size: 1.2rem;
+    }
+
+    .about-inspection .about-inspection__subtitle {
+        font-size: 0.8rem;
+    }
+}
+
+/* ================= RESPONSIVE - DESKTOP (1024px and up) ================= */
+@media (min-width: 1024px) {
+    .about-inspection {
+        min-height: 28rem;
+    }
+
+    .about-inspection .about-inspection__container {
+        padding: 4rem 3rem;
+    }
+
+    .about-inspection .about-inspection__title {
+        font-size: 3.25rem;
+    }
+
+    .about-inspection .about-inspection__description {
+        font-size: 1.25rem;
+        line-height: 1.75;
+    }
+
+    .about-inspection .about-inspection__divider {
+        width: 100px;
+        height: 4px;
+    }
+}
+
+/* ================= RESPONSIVE - LARGE DESKTOP (1280px and up) ================= */
+@media (min-width: 1280px) {
+    .about-inspection {
+        min-height: 32rem;
+    }
+
+    .about-inspection .about-inspection__title {
+        font-size: 3.75rem;
+    }
+}
+
+/* ================= RESPONSIVE - MOBILE (480px and down) ================= */
+@media (max-width: 640px) {
+    .about-inspection {
+        min-height: 16rem;
+        background-attachment: scroll;
+    }
+
+    .about-inspection .about-inspection__container {
+        padding: 1.5rem 1rem;
+    }
+
+    .about-inspection .about-inspection__title {
+        font-size: 1.75rem;
+    }
+
+    .about-inspection .about-inspection__description {
+        font-size: 0.95rem;
+        padding-left: 1rem;
+    }
+}
+
+/* ================= RESPONSIVE - SMALL MOBILE (360px and down) ================= */
+@media (max-width: 480px) {
+    .about-inspection {
+        min-height: 14rem;
+    }
+
+    .about-inspection .about-inspection__title {
+        font-size: 1.5rem;
+    }
+
+    .about-inspection .about-inspection__description {
+        font-size: 0.875rem;
+    }
+
+    .about-inspection .about-inspection__subtitle {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.75rem;
+    }
+}
+
+/* ================= PERFORMANCE OPTIMIZATION ================= */
+@media (prefers-reduced-motion: reduce) {
+    .about-inspection {
+        background-attachment: scroll;
+    }
+}

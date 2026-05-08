@@ -1,27 +1,37 @@
-import React from 'react'
-import Footer from './components/headrandfooter/Footer'
-import Navbar from './components/headrandfooter/Navbar'
-import InlineMarquee from './components/Marquee'
-import HeroSection from './components/pagescomponents/home/HeroSection'
-import GridSection from './components/GridSection'
-import Services from './components/Services'
-import AboutCompanySection from './components/AboutCompanySection'
-import OurFeatures from './components/OurFeatures'
+import React from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+
+import Navbar from "./components/headrandfooter/Navbar.jsx";
+import Footer from "./components/headrandfooter/Footer.jsx";
+import Home from "./components/pages/Home.jsx";
+// FIX: Capitalize 'Services' here to match the component usage
+import Services from "./components/pages/Serve1.jsx"; 
+import OtherServices from "./components/pages/Serve2.jsx"
+
+import "./App.css";
+import AboutUs from "./components/pages/About.jsx"
+import ContactUs from "./components/pages/Contact1.jsx"
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <HeroSection />
-      <GridSection />
-      <Services />
-      <InlineMarquee />
-      <AboutCompanySection />
-      <OurFeatures />
-      <Footer />
-    </div>
+    <>
+      <BrowserRouter>
+        <Navbar />
 
-  )
-}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          {/* Now 'Services' matches the import above */}
+          <Route path="/services" element={<Services />} />
+          <Route path="/otherservice" element={<OtherServices/>} />
+          <Route path="/contact" element={<ContactUs />} />
+ 
+        </Routes>
 
-export default App
+        <Footer />
+      </BrowserRouter>
+    </>
+  );
+};
+
+export default App;

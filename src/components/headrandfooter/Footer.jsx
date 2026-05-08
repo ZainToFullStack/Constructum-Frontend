@@ -61,12 +61,15 @@ const Footer = () => {
               <h4>New York</h4>
               <p>523 Sylvan Ave, 5th Floor<br/>Mountain View, CA 94041 USA</p>
               <h4>Follow us</h4>
-              <div className="socialIcons">
-                <a href="#"><Twitter /></a>
-                <a href="#"><Facebook /></a>
-                <a href="#"><Youtube /></a>
-                <a href="#"><Instagram /></a>
-              </div>
+           {/* Social Icons wrapped in a Pill Container */}
+<div className="socialIcons">
+  <div className="socialPill">
+    <a href="#"><Twitter /></a>
+    <a href="#"><Facebook /></a>
+    <a href="#"><Youtube /></a>
+    <a href="#"><Instagram /></a>
+  </div>
+</div>
             </div>
             <div>
               <h4>Phone</h4>
@@ -75,7 +78,7 @@ const Footer = () => {
               <p>Interested in working with us?<br/><a href="mailto:support@constructum.com" className="emailLink">support@constructum.com</a></p>
             </div>
           </div>
-          <div className="estDate">est. 1956</div>
+          {/* <div className="estDate">est. 1956</div> */}
         </div>
       </div>
 

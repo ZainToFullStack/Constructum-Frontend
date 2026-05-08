@@ -54,8 +54,8 @@ const AboutCompanySection = () => {
 
           {/* Large Background Text */}
           <div className="since-text">
-            We've built <br />
-            <span>since the 80's.</span>
+            {/* We've built <br />
+            <span>since the 80's.</span> */}
           </div>
         </div>
 

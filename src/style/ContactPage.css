@@ -1,0 +1,307 @@
+/* ============================================================
+   ContactPage.css
+   Palette: #8A774D  ·  #000000  ·  #FFFFFF  ·  #e5e5e5
+   ============================================================ */
+
+/* ── CSS Custom Properties ─────────────────────────────────── */
+:root {
+  --gold:        #8A774D;
+  --gold-dark:   #6e5e3a;
+  --black:       #000000;
+  --white:       #ffffff;
+  --grey-light:  #e5e5e5;
+  --grey-mid:    #cccccc;
+
+  /* Spacing rhythm */
+  --hero-height-xl: 560px;
+  --hero-height-lg: 480px;
+  --hero-height-md: 420px;
+  --hero-height-sm: 320px;
+  --hero-height-xs: 260px;
+
+  /* Bottom bar */
+  --bar-height:     80px;
+  --bar-height-sm:  60px;
+}
+
+/* ── Reset / Base ───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Page Shell ─────────────────────────────────────────────── */
+.page-wrapper {
+  background-color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* ── Hero Section ───────────────────────────────────────────── */
+.contact-hero {
+  position: relative;
+  width: 100%;
+  height: var(--hero-height-xl);
+
+  background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+
+  overflow: hidden;
+}
+
+/* ── Overlay ────────────────────────────────────────────────── */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.20) 60%,
+    rgba(138, 119, 77, 0.70) 100%
+  );
+  z-index: 1;
+}
+
+/* ── Hero Text Block ────────────────────────────────────────── */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+}
+
+.est-text {
+  display: block;
+  font-size: clamp(0.85rem, 1.5vw, 1.2rem);
+  font-weight: 300;
+  opacity: 0.9;
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--white);
+}
+
+/* ── Bottom Bar ─────────────────────────────────────────────── */
+.hero-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--bar-height);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  z-index: 3;
+}
+
+/* ── Breadcrumb Box ─────────────────────────────────────────── */
+.breadcrumb-box {
+  background-color: var(--grey-light);
+  height: 50px;
+  padding: 0 clamp(20px, 4vw, 40px);
+
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1.5vw, 10px);
+
+  border-top-right-radius: 40px;
+
+  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+  color: #333;
+  white-space: nowrap;
+}
+
+.breadcrumb-link {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: var(--gold);
+}
+
+.dot {
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.breadcrumb-current {
+  font-weight: 500;
+}
+
+/* ── Diagonal Stripes ───────────────────────────────────────── */
+.stripes-container {
+  display: flex;
+  gap: clamp(8px, 1.5vw, 15px);
+  padding-right: clamp(24px, 5vw, 50px);
+  padding-bottom: 10px;
+  align-items: flex-end;
+}
+
+.stripe {
+  width:  clamp(20px, 3vw, 35px);
+  height: clamp(60px, 10vh, 100px);
+  background-color: var(--gold);
+  transform: skewX(-30deg);
+  transition: background-color 0.2s ease;
+}
+
+.stripe:hover {
+  background-color: var(--gold-dark);
+}
+
+/* ── Main Content Area ──────────────────────────────────────── */
+.content-placeholder {
+  flex-grow: 1;
+  background-color: var(--grey-light);
+  min-height: 200px;
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* ── Large Desktop  ≤ 1440px ──────────────────────────────── */
+@media (max-width: 1440px) {
+  .contact-hero {
+    height: var(--hero-height-lg);
+    padding-left: 8%;
+  }
+}
+
+/* ── Laptop / Tablet Landscape  ≤ 1024px ─────────────────── */
+@media (max-width: 1024px) {
+  .contact-hero {
+    height: var(--hero-height-md);
+    padding-left: 7%;
+  }
+
+  .hero-bottom-bar {
+    height: var(--bar-height-sm);
+  }
+
+  .breadcrumb-box {
+    height: 44px;
+    border-top-right-radius: 30px;
+  }
+}
+
+/* ── Tablet Portrait  ≤ 768px ─────────────────────────────── */
+@media (max-width: 768px) {
+  .contact-hero {
+    height: var(--hero-height-sm);
+    padding-left: 6%;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 3.2rem);
+  }
+
+  .hero-bottom-bar {
+    height: var(--bar-height-sm);
+  }
+
+  .breadcrumb-box {
+    height: 40px;
+    border-top-right-radius: 24px;
+    font-size: 0.78rem;
+  }
+
+  .stripes-container {
+    gap: 8px;
+    padding-right: 20px;
+  }
+
+  .stripe {
+    width: 22px;
+    height: 60px;
+  }
+}
+
+/* ── Mobile Landscape / Large Phone  ≤ 600px ─────────────── */
+@media (max-width: 600px) {
+  .contact-hero {
+    height: var(--hero-height-xs);
+    padding-left: 5%;
+    align-items: flex-start;
+    padding-top: 15%;
+  }
+
+  .est-text {
+    font-size: 0.8rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 12vw, 2.8rem);
+  }
+
+  .hero-bottom-bar {
+    height: 50px;
+  }
+
+  .breadcrumb-box {
+    height: 36px;
+    padding: 0 16px;
+    border-top-right-radius: 18px;
+    font-size: 0.72rem;
+    gap: 6px;
+  }
+
+  .stripes-container {
+    gap: 6px;
+    padding-right: 14px;
+    padding-bottom: 6px;
+  }
+
+  .stripe {
+    width: 16px;
+    height: 50px;
+  }
+}
+
+/* ── Small Mobile  ≤ 375px ────────────────────────────────── */
+@media (max-width: 375px) {
+  .contact-hero {
+    padding-left: 4%;
+    padding-top: 18%;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .breadcrumb-box {
+    height: 32px;
+    padding: 0 12px;
+    border-top-right-radius: 14px;
+    font-size: 0.68rem;
+  }
+
+  .stripe {
+    width: 13px;
+    height: 44px;
+  }
+
+  .stripes-container {
+    gap: 5px;
+    padding-right: 10px;
+  }
+}

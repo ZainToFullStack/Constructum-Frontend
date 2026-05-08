@@ -1,0 +1,202 @@
+.stats-container {
+  background-color: #e5e5e5;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 10% 0 10%;
+  overflow: hidden;
+}
+
+.stats-header {
+  border-bottom: 1px solid #111;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.stats-subtext {
+  font-size: 14px;
+  text-transform: lowercase;
+  color: #111;
+  font-weight: 500;
+}
+
+.stats-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 40px;
+  gap: 50px;
+}
+
+/* 🔥 Bronze Number */
+.stats-number {
+  font-size: 110px;
+  color: #AA925E; /* Bronze Color */
+  font-weight: 800;
+  line-height: 1;
+  margin: 0;
+}
+
+.stats-description {
+  max-width: 500px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 80%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.dotted-map {
+  width: 100%;
+  opacity: 0.6;
+  filter: grayscale(1);
+}
+
+/* 🔥 Bronze Markers */
+.marker {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 2px solid #AA925E; /* Bronze Border */
+  border-radius: 50%;
+}
+
+/* Existing marker style ko kuck nahi kehna, bas tooltip add karni hai */
+
+.marker {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 2px solid #AA925E;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Tooltip design using pseudo-element */
+.marker::before {
+  content: attr(data-name); /* Yeh data-name attribute se text uthaye ga */
+  position: absolute;
+  bottom: 150%; /* Dot ke upar show hoga */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1a1a; /* Aapka footer wala dark color */
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 2px;
+  white-space: nowrap;
+  
+  /* Shuru mein hidden */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Tooltip ka chota sa arrow niche */
+.marker::after {
+  /* Note: Maine aapka original marker dot ::after mein banaya hua hai, 
+     isliye arrow ke liye hum transition use karenge ya content add nahi karenge */
+}
+
+/* Hover Effect */
+.marker:hover::before {
+  opacity: 1;
+  visibility: visible;
+  bottom: 180%; /* Thora smooth upar move hoga */
+}
+
+/* Hover par marker ka size thora bara karne ke liye (Optional) */
+.marker:hover {
+  background-color: rgba(170, 146, 94, 0.2);
+}
+
+.marker::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3px;
+  height: 3px;
+  background-color: #AA925E; /* Bronze Dot */
+  border-radius: 50%;
+}
+
+.m1 { top: 20%; left: 10%; }
+.m2 { top: 40%; left: 25%; }
+.m3 { top: 55%; left: 28%; }
+.m4 { top: 65%; left: 26%; }
+.m5 { top: 75%; left: 40%; }
+.m6 { top: 55%; left: 50%; }
+.m7 { top: 80%; left: 65%; }
+
+/* 🔥 FOOTER & BRONZE MASK */
+.stats-footer {
+  background-color: #1a1a1a;
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.bronze-stripes-mask {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 15px;
+  transform: skewX(-35deg) translateX(35px);
+}
+
+.stripe {
+  width: 45px;
+  height: 180px;
+  background-color: #AA925E; /* Bronze Stripes */
+}
+
+/* 🔥 Gallery Preview Section */
+
+.gallery-preview {
+  background-color: #1a1a1a; /* Dark black color */
+  width: 100vw; /* Poori screen ki width */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  
+  /* Spacing aur alignment */
+  padding: 80px 10%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #fff;
+  box-sizing: border-box;
+}
+/* Agar aap chahtay hain gallery thori upar shift ho kar stripes ko touch kare */
+.stats-container {
+  min-height: auto; /* vh hatane se layout stable ho jayega */
+  padding-bottom: 120px; /* Footer ki jagah */
+}
+
+@media (max-width: 1024px) {
+  .stats-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .stats-number {
+    font-size: 70px;
+  }
+}

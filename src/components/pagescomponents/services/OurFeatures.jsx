@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../style/OurFeatures.css";
+import "../../../style/OurFeatures.css";
 
 const OurFeatures = () => {
   const [activeTab, setActiveTab] = useState('modern');
@@ -13,7 +13,6 @@ const OurFeatures = () => {
   return (
     <section className="features-section">
       <div className="features-container">
-        
         {/* Left Side: Image with Decorative Stripes */}
         <div className="features-image-wrapper">
           <div className="main-feature-img">
@@ -21,7 +20,6 @@ const OurFeatures = () => {
               src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1000&auto=format&fit=crop" 
               alt="Engineer" 
             />
-            {/* White Decorative Stripes like the picture */}
             <div className="decorative-stripes"></div>
           </div>
         </div>
@@ -70,7 +68,6 @@ const OurFeatures = () => {
             EXPLORE MORE <span className="arrow">↗</span>
           </a>
         </div>
-
       </div>
     </section>
   );

@@ -1,81 +1,116 @@
 import { useState } from "react";
-import { Search, Menu } from "lucide-react";
-import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
-import logoImg from "../../assets/logo34.png"; 
+import { Search, Menu, X } from "lucide-react";
+import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+import logoImg from "../../assets/logo34.png";
 import "../../style/Navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="navbar">
-      <div className="topbar">
-      <div className="topbar-left">
-        <span>Services</span>
-        <span>FAQ</span>
-        <span>Pricing Plans</span>
+    <>
+      <div className="navbar-wrapper">
+        <header className="navbar">
+
+          <div className="navbar-inner">
+
+            {/* LOGO */}
+
+            <div className="logo-container">
+              <Link to="/">
+                <img
+                  src={logoImg}
+                  alt="Constructum Logo"
+                  className="navbar-logo"
+                />
+              </Link>
+            </div>
+
+            {/* DESKTOP LINKS */}
+
+            <nav className="nav-links">
+
+              <Link to="/">HOME</Link>
+
+              <Link to="/aboutus">
+                ABOUT US
+              </Link>
+
+              <Link to="/services">
+                SERVICES
+              </Link>
+
+              <Link to="/otherservice">
+                OTHER SERVICES
+              </Link>
+
+              <Link to="/contact">
+                CONTACT US
+              </Link>
+
+            </nav>
+
+            {/* RIGHT SECTION */}
+
+            <div className="nav-right">
+
+              <Search
+                size={20}
+                className="search-icon"
+              />
+
+              <button className="cta-btn">
+                Get in Touch
+              </button>
+
+            </div>
+
+            {/* MOBILE MENU ICON */}
+
+            <div
+              className="menu-icon"
+              onClick={() => setOpen(!open)}
+            >
+              {open ? <X size={28} /> : <Menu size={28} />}
+            </div>
+
+          </div>
+
+          {/* MOBILE MENU */}
+
+          <div className={`mobile-menu ${open ? "active" : ""}`}>
+
+            <nav>
+
+              <Link to="/" onClick={() => setOpen(false)}>
+                Home
+              </Link>
+
+              <Link to="/aboutus" onClick={() => setOpen(false)}>
+                About Us
+              </Link>
+
+              <Link to="/services" onClick={() => setOpen(false)}>
+                Services
+              </Link>
+
+              <Link to="/otherservice" onClick={() => setOpen(false)}>
+                Other Services
+              </Link>
+
+              <Link to="/contact" onClick={() => setOpen(false)}>
+                Contact Us
+              </Link>
+
+            </nav>
+
+          </div>
+
+        </header>
       </div>
-
-      <div className="topbar-right">
-        <span>Call us: +1 (800) 987 456 98</span>
-        <span>Mail us: constructum@mail.com</span>
-        
-        {/*  Social Icons Section */}
-        <div className="topbar-socials">
-          <a href="#" aria-label="Twitter"><FaTwitter /></a>
-          <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-          <a href="#" aria-label="Youtube"><FaYoutube /></a>
-          <a href="#" aria-label="Instagram"><FaInstagram /></a>
-        </div>
-      </div>
-    </div>
-
-
-      {/* MAIN NAVBAR */}
-      <div className="navbar-inner">
-
-        {/* LOGO */}
-        <div className="logo-container">
-          <a href="/">
-            <img src={logoImg} alt="Constructum Logo" className="navbar-logo" />
-          </a>
-        </div>
-
-        {/* LINKS */}
-        <nav className="nav-links">
-          <a href="#">HOME</a>
-          <a href="#">PAGES</a>
-          <a href="#">PROJECTS</a>
-          <a href="#">SHOP</a>
-          <a href="#">BLOG</a>
-          <a href="#">CONTACTS</a>
-        </nav>
-
-        {/* RIGHT */}
-        <div className="nav-right">
-          <Search size={18} className="search-icon" />
-          <button className="cta-btn">Get in Touch</button>
-        </div>
-
-        {/* MOBILE */}
-        <div className="menu-icon" onClick={() => setOpen(prev => !prev)}>
-          <Menu />
-        </div>
-      </div>
-
-      {/* MOBILE MENU */}
-      <div className={`mobile-menu ${open ? "active" : ""}`}>
-        <nav>
-          <a href="#">Home</a>
-          <a href="#">Pages</a>
-          <a href="#">Projects</a>
-          <a href="#">Shop</a>
-          <a href="#">Blog</a>
-          <a href="#">Contacts</a>
-        </nav>
-      </div>
-
-    </header>
+    </>
   );
 };
 
