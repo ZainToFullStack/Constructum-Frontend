@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import "../../../style/ContentSection.css";
 
 const ContentSection = () => {
-  // State to track which FAQ index is open
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -11,56 +10,60 @@ const ContentSection = () => {
 
   const faqData = [
     {
-      question: "Where I can find instructions to technology process?",
-      answer: "Trumpeter candlefish sheatfish dorado yellowtail kingfish Black swallower Rio Grande perch Atlantic herring porbeagle shark. Stickleback; Rabbitfish orangespine unicorn fish saber-toothed blenny bigeye northern anchovy"
+      question: "How does your inspection process work?",
+      answer: "At Prime Assessment Services and Solutions, we follow a structured inspection methodology that includes documentation review, on-site evaluation, and technical analysis using advanced diagnostic tools to ensure accurate and reliable results."
     },
     {
-      question: "How to work with documentation?",
-      answer: "Trumpeter candlefish sheatfish dorado yellowtail kingfish Black swallower Rio Grande perch Atlantic herring porbeagle shark. Stickleback; Rabbitfish orangespine unicorn fish saber-toothed blenny bigeye northern anchovy"
+      question: "What type of inspection reports do you provide?",
+      answer: "We deliver detailed structural and technical inspection reports including safety assessments, defect identification, and condition analysis to support informed decision-making for property owners and developers."
     },
     {
-      question: "Can you help with development?",
-      answer: "Trumpeter candlefish sheatfish dorado yellowtail kingfish Black swallower Rio Grande perch Atlantic herring porbeagle shark. Stickleback; Rabbitfish orangespine unicorn fish saber-toothed blenny bigeye northern anchovy"
+      question: "Do you use advanced technology for inspections?",
+      answer: "Yes, we utilize modern inspection tools such as thermal cameras, moisture meters, multimeters, and 3D scanning technology to detect hidden structural issues with high precision and accuracy."
     }
   ];
 
   return (
     <div className="full-page-wrapper"> 
       <div className="content-container">
-        {/* Planing & Strategy Section */}
+
+        {/* Inspection Strategy Section */}
         <section className="strategy-section">
-          <h2 className="section-heading">Planing & Strategy</h2>
+          <h2 className="section-heading">Inspection Planning & Methodology</h2>
+
           <ul className="strategy-list">
             <li>
               <span className="list-icon">↘</span>
-              Research beyond the business plan
+              Comprehensive site evaluation and risk assessment
             </li>
             <li>
               <span className="list-icon">↘</span>
-              Marketing options and rates
+              Advanced diagnostic tools and inspection techniques
             </li>
             <li>
               <span className="list-icon">↘</span>
-              The ability to turnaround consulting
+              Accurate reporting with professional analysis
             </li>
           </ul>
 
           <div className="text-blocks">
             <p>
-              Trumpeter candlefish sheatfish dorado yellowtail kingfish Black swallower Rio Grande perch Atlantic herring porbeagle shark. Stickleback; Rabbitfish orangespine unicorn fish saber-toothed blenny bigeye northern anchovy
+              Prime Assessment Services and Solutions specializes in professional inspection services focused on structural safety, quality assurance, and technical evaluation. We ensure every project is assessed with precision using modern inspection standards.
             </p>
             <p>
-              Reef triggerfish goblin shark sand knifefish; slickhead grass carp. Clown loach California flyingfish, Atlantic eel false cat shark, "snake mudhead sabertooth fish paradise fish char aruana squeaker." Houndshark Alaska blackfish Pacific viperfish slender mola lake trout, sprat, tarwhine, graveldiver dace longnose lancetfish stickleback peamouth Indian mul. Sandroller; Peter's elephantnose fish long-finned char.
+              Our inspection process identifies hidden defects, structural weaknesses, and safety risks using advanced tools and engineering expertise. We deliver clear, reliable insights that help clients make informed construction and property decisions.
             </p>
           </div>
         </section>
 
         {/* FAQ Section */}
         <section className="faq-section">
-          <h2 className="section-heading">Freuqency asked questions</h2>
+          <h2 className="section-heading">Frequently Asked Inspection Questions</h2>
+
           <div className="faq-list">
             {faqData.map((item, index) => (
               <div key={index} className="faq-item">
+                
                 <div 
                   className="faq-question-row" 
                   onClick={() => toggleFAQ(index)} 
@@ -71,15 +74,16 @@ const ContentSection = () => {
                     {activeIndex === index ? '↓' : '→'}
                   </span>
                 </div>
-                
-                {/* Answer only shows if activeIndex matches current index */}
+
                 {activeIndex === index && (
                   <p className="faq-answer">{item.answer}</p>
                 )}
+
               </div>
             ))}
           </div>
         </section>
+
       </div>
     </div>
   );

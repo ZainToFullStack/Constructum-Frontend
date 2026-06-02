@@ -1,0 +1,77 @@
+.page-loader {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
+  width: 100dvw;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* FIX: fully opaque black background */
+  background: #000000;
+
+  /* FIX: start hidden (opacity 0) so visible class can fade it in */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease, visibility 0.5s ease-in-out;
+}
+
+.page-loader.visible {
+  /* FIX: fully opaque when active — no transparency */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.page-loader__inner {
+  text-align: center;
+  color: #fff;
+  padding: 0 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.page-loader__logo {
+  width: clamp(140px, 40vw, 220px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.page-loader__bar {
+  width: clamp(140px, 50vw, 240px);
+  height: 3px;
+  margin: 1.4rem auto 0;
+  background: rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+  position: relative;
+}
+
+.page-loader__progress {
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 28%;
+  height: 100%;
+  background: rgba(170, 143, 84, 1);
+  animation: loader-bar-slide 1.6s ease-in-out infinite;
+}
+
+@keyframes loader-bar-slide {
+  0% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(450%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Search, Menu, X } from "lucide-react";
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import logoImg from "../../assets/logo34.png";
 import "../../style/Navbar.css";
@@ -19,36 +19,58 @@ const Navbar = () => {
             {/* LOGO */}
 
             <div className="logo-container">
-              <Link to="/">
+              <NavLink to="/">
                 <img
                   src={logoImg}
                   alt="Constructum Logo"
                   className="navbar-logo"
                 />
-              </Link>
+              </NavLink>
             </div>
 
             {/* DESKTOP LINKS */}
 
             <nav className="nav-links">
 
-              <Link to="/">HOME</Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "active" : ""
+                }
+              >
+                HOME
+              </NavLink>
 
-              <Link to="/aboutus">
+              <NavLink
+                to="/aboutus"
+                className={({ isActive }) =>
+                  isActive ? "active" : ""
+                }
+              >
                 ABOUT US
-              </Link>
+              </NavLink>
 
-              <Link to="/services">
+              <NavLink
+                to="/services"
+                className={({ isActive }) =>
+                  isActive ? "active" : ""
+                }
+              >
                 SERVICES
-              </Link>
+              </NavLink>
 
-              <Link to="/otherservice">
+              {/* <NavLink to="/otherservice">
                 OTHER SERVICES
-              </Link>
+              </NavLink> */}
 
-              <Link to="/contact">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? "active" : ""
+                }
+              >
                 CONTACT US
-              </Link>
+              </NavLink>
 
             </nav>
 
@@ -61,9 +83,9 @@ const Navbar = () => {
                 className="search-icon"
               />
 
-              <button className="cta-btn">
+              <NavLink className="cta-btn" to="/contact">
                 Get in Touch
-              </button>
+              </NavLink>
 
             </div>
 
@@ -84,25 +106,49 @@ const Navbar = () => {
 
             <nav>
 
-              <Link to="/" onClick={() => setOpen(false)}>
+              <NavLink
+                to="/"
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  isActive ? "active" : ""
+                }
+              >
                 Home
-              </Link>
+              </NavLink>
 
-              <Link to="/aboutus" onClick={() => setOpen(false)}>
+              <NavLink
+                to="/aboutus"
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  isActive ? "active" : ""
+                }
+              >
                 About Us
-              </Link>
+              </NavLink>
 
-              <Link to="/services" onClick={() => setOpen(false)}>
+              <NavLink
+                to="/services"
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  isActive ? "active" : ""
+                }
+              >
                 Services
-              </Link>
+              </NavLink>
 
-              <Link to="/otherservice" onClick={() => setOpen(false)}>
+              {/* <NavLink to="/otherservice">
                 Other Services
-              </Link>
+              </NavLink> */}
 
-              <Link to="/contact" onClick={() => setOpen(false)}>
+              <NavLink
+                to="/contact"
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  isActive ? "active" : ""
+                }
+              >
                 Contact Us
-              </Link>
+              </NavLink>
 
             </nav>
 

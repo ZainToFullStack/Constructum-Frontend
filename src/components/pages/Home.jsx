@@ -8,6 +8,10 @@ import OurFeatures from '../pagescomponents/services/OurFeatures';
 import ProcessSection from '../pagescomponents/services/ProcessSection';
 import BlogSection from '../BlogSection';
 import TestimonialSection from '../TestimonialSection';
+import hometestinomials from '../hometestinomials';
+import TestimonialsSlider from '../hometestinomials';
+import ProfessionalMarquee from '../Marquee';
+// import hometestinomials from '../hometestinomials';
 // import Services from '../pagescomponents/services/Services'
 // import AboutCompanySection from '../AboutCompanySection'
 // import OurFeatures from '../OurFeatures'
@@ -21,18 +25,20 @@ function Home() {
     <>
       <HeroSection />
       <GridSection />
-      <Services />
+      {/* <Services /> */}
       <AboutCompanySection />
+      <ProfessionalMarquee />
       <OurFeatures />
       <ProcessSection />
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       <BlogSection />
-      {/* <InlineMarquee />
+      <TestimonialsSlider />
+      {/* 
       <AboutCompanySection />
       <OurFeatures />
       <StatsSection />
       <GallerySlider />
-      <ProcessSection /> */} 
+      <ProcessSection /> */}
 
     </>
   )

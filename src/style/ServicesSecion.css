@@ -1,177 +1,568 @@
 :root {
-  --gold-theme: #8A774D;
+  --gold-theme: #AD8C48;
   --bg-light: #e5e5e5;
+  --black: #111111;
+  --white: #ffffff;
 }
 
+/* =========================
+   MAIN WRAPPER
+========================= */
+
 .services-wrapper {
-  background-color: var(--bg-light);
-  padding: 80px 0;
   width: 100%;
-  font-family: 'Inter', sans-serif;
+  background: var(--bg-light);
+  padding: 90px 0;
+  overflow: hidden;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1320px;
+  margin: auto;
   padding: 0 24px;
   box-sizing: border-box;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
+
 .header-flex {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 52px;
-  gap: 48px;
+  gap: 50px;
+  margin-bottom: 55px;
 }
 
-.title-area { flex: 1.5; }
-.desc-area { flex: 1; }
-
-.sub-tag {
-  color: #888;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  text-transform: lowercase;
-  margin-bottom: 12px;
-  display: block;
+.title-area {
+  flex: 1.5;
 }
 
-h1 {
-  font-size: clamp(24px, 3vw, 42px);
-  line-height: 1.1;
-  font-weight: 500;
-  margin: 0;
-  color: #1a1a1a;
-}
-
-.desc-area p {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.65;
-  margin: 0;
-}
-
-/* Grid */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.service-card {
-  background: #1a1a1a;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.image-box {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1.1;
-  overflow: hidden;
-}
-
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: grayscale(100%);
-  transition: filter 0.4s ease, transform 0.5s ease;
-}
-
-.item-number {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 10;
-  color: var(--gold-theme);
-  font-weight: 500;
-  font-size: 16px;
-}
-
-.content-box {
-  padding: 18px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #1a1a1a;
-  gap: 8px;
-  transition: background 0.3s;
-}
-
-.card-text {
-  color: #fff;
-  font-size: 13px;
-  line-height: 1.45;
-  margin: 0;
-  transition: color 0.3s;
+.desc-area {
   flex: 1;
 }
 
-.arrow {
-  color: #fff;
-  font-size: 16px;
-  flex-shrink: 0;
-  transition: transform 0.25s ease, color 0.25s ease;
+.sub-tag {
+  display: inline-block;
+  color: #7c7c7c;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  margin-bottom: 14px;
 }
 
-/* Hover States */
-.service-card:hover .image-box img {
-  filter: grayscale(0%);
-  transform: scale(1.04);
+.title-area h1 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 48px);
+  line-height: 1.08;
+  font-weight: 500;
+  color: var(--black);
+  max-width: 780px;
 }
+
+.desc-area p {
+  margin: 0;
+  color: #5c5c5c;
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 450px;
+}
+
+/* =========================
+   SWIPER
+========================= */
+
+.services-swiper {
+  width: 100%;
+  overflow: visible !important;
+  padding-bottom: 10px;
+}
+
+.swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.service-card {
+  background: linear-gradient(
+    145deg,
+    #111111,
+    #1b1b1b
+  );
+
+  overflow: hidden;
+  position: relative;
+  transition: 0.4s ease;
+
+  border: 1px solid rgba(255,255,255,0.05);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  min-height: 320px;
+  height: 100%;
+
+  padding: 28px 24px;
+}
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: var(--gold-theme);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0px 20px 40px rgba(0,0,0,0.16);
+}
+
+/* =========================
+   REMOVE IMAGE SECTION
+========================= */
+
+.image-box,
+.image-box img,
+.image-box::after {
+  display: none;
+}
+
+/* =========================
+   NUMBER
+========================= */
+
+.item-number {
+  position: relative;
+
+  top: unset;
+  left: unset;
+
+  display: inline-block;
+
+  color: var(--gold-theme);
+
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  margin-bottom: 20px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content-box {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 0;
+
+  background: transparent;
+
+  flex: 1;
+}
+
+.text-content {
+  width: 100%;
+}
+
+.card-text {
+  margin: 0;
+
+  color: var(--white);
+
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+.card-description {
+  margin-top: 18px;
+
+  color: rgba(255,255,255,0.72);
+
+  font-size: 14px;
+  line-height: 1.9;
+
+  overflow: visible;
+
+  display: block;
+}
+
+.arrow {
+  align-self: flex-end;
+
+  color: var(--white);
+
+  font-size: 24px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =========================
+   HOVER
+========================= */
 
 .service-card:hover .card-text {
   color: var(--gold-theme);
 }
 
 .service-card:hover .arrow {
-  transform: translate(2px, -2px);
   color: var(--gold-theme);
+
+  transform:
+    translate(4px, -4px);
 }
 
-/* Pagination */
-.pagination {
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .desc-area p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-wrapper {
+    padding: 70px 0;
+  }
+
+  .container {
+    padding: 0 18px;
+  }
+
+  .service-card {
+    min-height: 290px;
+    padding: 24px 20px;
+  }
+
+  .card-text {
+    font-size: 20px;
+  }
+
+  .card-description {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .arrow {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-wrapper {
+    padding: 60px 0;
+  }
+
+  .title-area h1 {
+    line-height: 1.15;
+  }
+
+  .service-card {
+    min-height: 260px;
+    padding: 22px 18px;
+  }
+
+  .card-text {
+    font-size: 18px;
+  }
+
+  .card-description {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .item-number {
+    font-size: 13px;
+  }
+
+  .arrow {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   PREMIUM MODAL
+========================= */
+
+.service-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-top: 44px;
+
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(12px);
+
+  animation: overlayFade 0.35s ease;
 }
 
-.dot {
-  width: 7px;
-  height: 7px;
+.service-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 760px;
+
+  background: #111111;
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.25),
+    0 30px 90px rgba(0,0,0,0.55);
+
+  animation: modalEntry 0.45s cubic-bezier(.17,.84,.44,1);
+}
+
+/* =========================
+   REMOVE MODAL IMAGE
+========================= */
+
+.modal-image,
+.modal-image img,
+.modal-image::after {
+  display: none;
+}
+
+/* =========================
+   MODAL NUMBER
+========================= */
+
+.modal-number {
+  position: relative;
+
+  display: inline-block;
+
+  margin-bottom: 22px;
+
+  color: var(--gold-theme);
+
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+/* =========================
+   CONTENT SIDE
+========================= */
+
+.modal-content {
+  position: relative;
+
+  padding: 80px 60px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      to bottom right,
+      #111111,
+      #171717
+    );
+}
+
+.modal-content::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: var(--gold-theme);
+}
+
+.modal-content h2 {
+  margin: 0 0 24px;
+
+  color: white;
+
+  font-size: clamp(32px, 4vw, 52px);
+
+  line-height: 1.08;
+  font-weight: 500;
+
+  letter-spacing: -1px;
+}
+
+.modal-content p {
+  margin: 0;
+
+  color: rgba(255,255,255,0.72);
+
+  font-size: 15px;
+  line-height: 2;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.modal-close {
+  position: absolute;
+
+  top: 22px;
+  right: 22px;
+
+  width: 48px;
+  height: 48px;
+
   border-radius: 50%;
-  background: #bbb;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(255,255,255,0.06);
+
+  color: white;
+
+  font-size: 18px;
+
   cursor: pointer;
-  transition: background 0.2s;
+
+  z-index: 50;
+
+  transition: 0.35s ease;
 }
 
-.dot.active {
-  background: #1a1a1a;
-  outline: 1px solid #1a1a1a;
-  outline-offset: 3px;
+.modal-close:hover {
+  background: var(--gold-theme);
+  border-color: var(--gold-theme);
+
+  transform:
+    rotate(90deg)
+    scale(1.08);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .header-flex { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .desc-area { max-width: 520px; }
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-@media (max-width: 600px) {
-  .services-wrapper { padding: 52px 0; }
-  .services-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .content-box { padding: 12px 10px; }
-  .card-text { font-size: 11px; }
-  .item-number { font-size: 13px; top: 10px; left: 10px; }
+@keyframes modalEntry {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(40px)
+      scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
 }
 
-@media (max-width: 380px) {
-  .services-grid { grid-template-columns: 1fr; }
+/* =========================
+   RESPONSIVE MODAL
+========================= */
+
+@media (max-width: 768px) {
+  .service-modal-overlay {
+    padding: 16px;
+  }
+
+  .modal-content {
+    padding: 60px 28px 36px;
+  }
+
+  .modal-content h2 {
+    margin-bottom: 18px;
+  }
+
+  .modal-content p {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .modal-close {
+    width: 42px;
+    height: 42px;
+
+    top: 14px;
+    right: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 55px 20px 28px;
+  }
+
+  .modal-content h2 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .modal-content p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .modal-number {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
 }

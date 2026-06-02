@@ -1,0 +1,171 @@
+/* ================= ROOT ================= */
+.testimonials-section {
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    background-color: #fff;
+    color: #000000;
+    padding: 4rem 1rem;
+}
+
+/* ================= WRAPPER ================= */
+.testimonials-section .testimonials-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+/* ================= LABEL ================= */
+.testimonials-section .testimonials-label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #C09B50;
+    background: #00000005;
+    padding: 5px 12px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonials-section .testimonials-label::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #C09B50;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* ================= TITLE ================= */
+.testimonials-section .testimonials-title {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin: 0 0 10px;
+    z-index: 1;
+    position: relative;
+}
+
+/* ================= LEAD ================= */
+.testimonials-section .testimonials-lead {
+    font-size: 14px;
+    color: #555;
+    margin: 0 0 40px;
+    z-index: 1;
+    position: relative;
+}
+
+/* ================= SWIPER ================= */
+.testimonials-section .testimonials-swiper {
+    padding-bottom: 40px;
+}
+
+/* ================= TESTIMONIAL ITEM ================= */
+.testimonials-section .testimonials-item {
+    background: #fff;
+    padding: 30px 25px 25px;
+    border-radius: 6px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+/* ================= TESTIMONIAL TEXT ================= */
+.testimonials-section .testimonials-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* ================= AUTHOR ================= */
+.testimonials-section .testimonials-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.testimonials-section .testimonials-author-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonials-section .testimonials-author-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #000000;
+}
+
+.testimonials-section .testimonials-author-location {
+    font-size: 12px;
+    color: #555;
+    margin-top: 3px;
+}
+
+/* ================= QUOTE ICON ================= */
+.testimonials-section .testimonials-quote {
+    color: #C09B50;
+    font-size: 30px;
+    position: absolute;
+    right: 20px;
+    bottom: 22px;
+}
+
+/* ================= ITEM DECORATION ================= */
+.testimonials-section .testimonials-item::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #C09B50;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 6px 6px;
+}
+
+/* ================= SWIPER PAGINATION DOTS ================= */
+.testimonials-section .swiper-pagination-bullets {
+    bottom: 0;
+}
+
+.testimonials-section .swiper-pagination-bullet {
+    background-color: #C09B50;
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+}
+
+.testimonials-section .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .testimonials-section .testimonials-swiper {
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-section .testimonials-item {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-section .testimonials-item {
+        padding: 15px;
+    }
+}

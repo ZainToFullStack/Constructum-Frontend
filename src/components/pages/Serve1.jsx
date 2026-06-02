@@ -4,13 +4,15 @@ import Services from '../pagescomponents/services/Services'
 import ServicesSection from '../pagescomponents/services/ServicesSection'
 import ProcessSection from '../pagescomponents/services/ProcessSection'
 import OurFeatures from '../pagescomponents/services/OurFeatures'
+import InspectionTools from '../pagescomponents/services/toolssection'
 
 const Serve1 = () => {
   return (
     <>
      <ServicesPage />
-       <Services />
+       {/* <Services /> */}
      <ServicesSection />
+     <InspectionTools />
      <ProcessSection />
      <OurFeatures />
     </>

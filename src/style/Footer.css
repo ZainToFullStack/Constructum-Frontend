@@ -1,370 +1,617 @@
-.footerMain {
-  background-color: #111;
-  color: #fff;
-  padding: 100px 5% 40px;
-  font-family: 'Inter', sans-serif;
+/* =========================
+   FOOTER - PREMIUM RESTRUCTURED
+   RESPONSIVE + CLEAN + NO DESIGN CHANGE
+========================= */
+
+:root {
+  --gold: #AA925E;
+  --black: #111;
+  --light-black: #1a1a1a;
+  --border: #2a2a2a;
+  --gray: #888;
+  --light-gray: #aaa;
+  --white: #fff;
 }
 
-/* --- SECTION 1: CONTACT SECTION --- */
+/* =========================
+   MAIN FOOTER
+========================= */
+
+.footerMain {
+  width: 100%;
+  background: var(--black);
+  color: var(--white);
+  padding: 100px 5% 40px;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
 .contactSection {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 80px;
   margin-bottom: 120px;
-  align-items: flex-start;
 }
 
-/* WHITE CARD */
+/* =========================
+   CONTACT CARD
+========================= */
+
 .contactCard {
-  background: #ebebeb;
-  color: #000;
-  padding: 60px 40px;
   width: 100%;
-  max-width: 450px;
-}
-
-.contactForm{
-  text-decoration-color: #000;
+  max-width: 470px;
+  background: #ebebeb;
+  padding: 60px 40px;
+  flex-shrink: 0;
 }
 
 .contactCard h2 {
-  font-size: 42px;
+  font-size: clamp(32px, 4vw, 46px);
   font-weight: 500;
+  line-height: 1.1;
+  color: #111;
   margin-bottom: 20px;
 }
 
 .contactCard p {
   font-size: 14px;
+  line-height: 1.8;
   color: #555;
   margin-bottom: 40px;
-  line-height: 1.6;
 }
+
+/* =========================
+   FORM
+========================= */
 
 .contactForm {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 }
 
-/* Contact Card ke andar jitne bhi input aur textarea hain unka text color */
-.contactForm input, 
+.contactForm input,
 .contactForm textarea {
+  width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
-  outline: none;
+  border-bottom: 1px solid #cfcfcf;
+  padding: 12px 0;
   font-size: 14px;
-  
-  /* 🔥 Text color ko black/dark grey set karein */
-  color: #222 !important; 
+  outline: none;
+  transition: 0.3s ease;
+  color: #222;
+  resize: none;
 }
 
-/* Placeholder ka color thoda light rakhne ke liye (optional) */
-.contactForm input::placeholder, 
+.contactForm textarea {
+  min-height: 120px;
+}
+
+.contactForm input::placeholder,
 .contactForm textarea::placeholder {
   color: #888;
 }
 
-/* Jab user likh raha ho (focus state) tab border thoda dark ho jaye */
-.contactForm input:focus, 
+.contactForm input:focus,
 .contactForm textarea:focus {
-  border-bottom: 1px solid #333;
+  border-color: #111;
 }
 
+/* =========================
+   BUTTON
+========================= */
+
 .sendBtn {
-  margin-top: 40px;
-  background: transparent;
-  border: none;
-  color: #AA925E;
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 230px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 12px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   cursor: pointer;
-  width: 100%;
-  max-width: 220px;
-  outline: none;
-  
-  /* 🔥 Straight Underline (No curve) */
-  border-bottom: 1px solid #AA925E; 
-  padding-bottom: 10px;
-  border-radius: 0; /* Kisi bhi qism ka curve khatam karne ke liye */
-  
-  transition: border-color 0.3s ease;
+  transition: 0.3s ease;
 }
 
+.sendBtn:hover {
+  opacity: 0.8;
+  transform: translateX(4px);
+}
 
+/* =========================
+   INFO SECTION
+========================= */
 
-/* RIGHT INFO */
 .infoSection {
   flex: 1;
+  width: 100%;
 }
-
-.infoSection h1 {
-  color: white;
-}
-
 
 .subTag {
-  color: #AA925E;
-  font-size: 13px;
-  display: block;
+  display: inline-block;
   margin-bottom: 20px;
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 
 .mainHeadline {
-  font-size: 58px;
+  max-width: 900px;
+  font-size: clamp(36px, 5vw, 50px);
   line-height: 1.1;
   font-weight: 500;
   margin-bottom: 60px;
+  color: var(--white);
 }
+
+/* =========================
+   INFO GRID
+========================= */
 
 .infoGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
 }
 
 .infoGrid h4 {
-  margin-bottom: 15px;
   font-size: 16px;
+  margin-bottom: 15px;
+  color: var(--white);
 }
 
 .infoGrid p {
-  color: #aaa;
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.9;
+  color: var(--light-gray);
   margin-bottom: 30px;
 }
 
-.socialIcons {
-  display: flex;
-  gap: 10px;
-}
+/* =========================
+   SOCIAL ICONS
+========================= */
 
 .socialIcons {
-  display: flex;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
-/* 🔥 The Pill Container */
 .socialPill {
+  width: fit-content;
   display: flex;
   align-items: center;
-  gap: 5px;
-  background: #1a1a1a; /* Dark background for the pill */
-  padding: 5px 15px;
-  border-radius: 50px; /* Makes it a pill shape */
+  gap: 8px;
+  background: var(--light-black);
   border: 1px solid #333;
+  padding: 7px 15px;
+  border-radius: 100px;
 }
 
 .socialPill a {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  transition: 0.3s ease;
-  border-radius: 50%; /* Individual icons will stay circular */
-}
-
-/* Hover effect inside the pill */
-.socialPill a:hover {
-  background: #AA925E;
-  color: #000;
-}
-
-.socialIcons a {
-  width: 35px;
-  height: 35px;
-  border: 1px solid #333;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  transition: 0.3s;
+  color: var(--white);
+  transition: all 0.3s ease;
 }
 
-.socialIcons a:hover {
-  background: #AA925E;
-  border-color: #AA925E;
+.socialPill a:hover {
+  background: var(--gold);
+  color: #111;
+  transform: translateY(-2px);
 }
+
+/* =========================
+   EMAIL
+========================= */
 
 .emailLink {
-  color: #AA925E;
+  color: var(--gold);
   text-decoration: none;
+  transition: 0.3s ease;
 }
 
-/* .estDate {
-  font-size: 130px;
-  font-weight: 500;
-  color: #AA925E;
-  margin-top: 40px;
-  letter-spacing: -5px;
-} */
+.emailLink:hover {
+  opacity: 0.8;
+}
 
-/* --- SECTION 2: BOTTOM FOOTER --- */
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
 .footerBottom {
+  width: 100%;
   border-top: 1px solid #222;
-  padding-top: 60px;
+  padding-top: 70px;
 }
+
+/* =========================
+   BOTTOM GRID
+========================= */
 
 .bottomGrid {
   display: grid;
-  grid-template-columns: 1.5fr 1.5fr 2fr;
-  gap: 100px;
+  grid-template-columns: 1.4fr 1.4fr 1.8fr;
+  gap: 80px;
 }
 
-.footerLogo { width: 180px; margin-bottom: 20px; }
+/* =========================
+   BRAND
+========================= */
 
-.brandCol p { color: #888; font-size: 13px; line-height: 1.6; }
+.footerLogo {
+  width: 180px;
+  max-width: 100%;
+  margin-bottom: 22px;
+}
 
-.newsletterCol h4, .menuCol h4 { margin-bottom: 25px; font-size: 16px; }
+.brandCol p {
+  max-width: 350px;
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+.newsletterCol h4,
+.menuCol h4 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: var(--white);
+}
+
+.newsletterCol p {
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 1.7;
+}
 
 .subscribeField {
+  width: 100%;
   display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
   border-bottom: 1px solid #333;
-  margin-top: 30px;
+  padding-bottom: 10px;
 }
 
 .subscribeField input {
+  width: 100%;
   background: transparent;
   border: none;
-  color: #fff;
-  padding: 10px 0;
-  flex: 1;
   outline: none;
+  color: var(--white);
+  font-size: 14px;
+}
+
+.subscribeField input::placeholder {
+  color: #777;
 }
 
 .subscribeField button {
   background: transparent;
   border: none;
-  color: #AA925E;
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: bold;
+  white-space: nowrap;
+  transition: 0.3s ease;
 }
+
+.subscribeField button:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   MENU
+========================= */
 
 .dualMenu {
   display: flex;
+  justify-content: space-between;
   gap: 60px;
 }
 
-.dualMenu ul { list-style: none; padding: 0; }
-.dualMenu li { margin-bottom: 12px; }
-.dualMenu li a { color: #888; text-decoration: none; font-size: 14px; transition: 0.3s; }
-.dualMenu li a:hover { color: #fff; }
-
-
-/* --- Dual Menu List Items Styling --- */
-.dualMenu ul li {
-  margin-bottom: 12px;
+.dualMenu ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dualMenu ul li {
+  margin-bottom: 14px;
 }
 
 .dualMenu ul li a {
   position: relative;
-  color: #888; /* Default color */
+  display: inline-block;
+  color: var(--gray);
   text-decoration: none;
   font-size: 14px;
-  padding-left: 0;
-  transition: all 0.4s ease-in-out;
-  display: inline-block;
+  transition: 0.35s ease;
 }
 
-/* 🔥 Slash Effect (Left Side) */
 .dualMenu ul li a::before {
   content: "/";
   position: absolute;
-  left: -15px; 
+  left: -15px;
   opacity: 0;
-  color: #AA925E; /* Specified Color */
-  font-weight: bold;
-  transition: all 0.3s ease;
+  color: var(--gold);
+  transition: 0.3s ease;
 }
 
-/* 🔥 Underline Effect (Bottom) */
 .dualMenu ul li a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -4px;
-  width: 0;
+  width: 0%;
   height: 1px;
-  background-color: #AA925E; /* Specified Color */
-  transition: all 0.3s ease;
+  background: var(--gold);
+  transition: 0.3s ease;
 }
-
-/* --- HOVER EFFECTS --- */
 
 .dualMenu ul li a:hover {
-  color: #fff; /* Hover par text white ho jaye */
-  padding-left: 15px; /* Slash ke liye jagah banane ke liye move hoga */
+  padding-left: 15px;
+  color: var(--white);
 }
 
-/* Slash ko dikhana */
 .dualMenu ul li a:hover::before {
-  opacity: 1;
   left: 0;
+  opacity: 1;
 }
 
-/* Underline ko full width karna */
 .dualMenu ul li a:hover::after {
   width: 100%;
 }
 
+/* =========================
+   FOOTER LEGAL
+========================= */
+
 .footerLegal {
+  width: 100%;
+  margin-top: 80px;
+  padding-top: 30px;
+  border-top: 1px solid #1f1f1f;
+
   display: flex;
   justify-content: space-between;
-  margin-top: 80px;
+  align-items: center;
+  gap: 20px;
+
+  color: #666;
   font-size: 12px;
-  color: #555;
 }
 
-/* Pehle arrow ka color define kar do */
+.footerLegal p {
+  margin: 0;
+}
+
+/* =========================
+   SCROLL BUTTON
+========================= */
+
 .scrollTopBtn {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
-  background-color: #998455; 
-  color: black; /* Default arrow color black */
-  width: 50px;
+  bottom: 30px;
+  right: 30px;
+  width: 52px;
   height: 80px;
-  border-radius: 50px;
   border: none;
-  cursor: pointer;
+  border-radius: 50px;
+  background: #998455;
+  color: #111;
   font-size: 24px;
+  cursor: pointer;
+  z-index: 9999;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
-  transition: all 0.3s ease; /* Transition ko 'all' kar diya taaki color bhi smooth badle */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+  transition: 0.3s ease;
 }
 
-/* Hover par background aur arrow (color) dono change honge */
 .scrollTopBtn:hover {
   transform: translateY(-5px);
-  background-color: #998455;
-  color: white; /* Yeh arrow ko white kar dega */
+  color: #fff;
 }
 
-@media (max-width: 768px) {
-  .scrollTopBtn {
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 70px;
+/* =========================
+   LARGE LAPTOP
+========================= */
+
+@media (max-width: 1200px) {
+
+  .contactSection {
+    gap: 50px;
+  }
+
+  .bottomGrid {
+    gap: 50px;
+  }
+
+  .mainHeadline {
+    font-size: 50px;
   }
 }
 
-/* RESPONSIVE */
+/* =========================
+   LAPTOP
+========================= */
+
 @media (max-width: 1024px) {
-  .contactSection { flex-direction: column; }
-  .mainHeadline { font-size: 40px; }
-  .bottomGrid { grid-template-columns: 1fr; gap: 50px; }
+
+  .contactSection {
+    flex-direction: column;
+  }
+
+  .contactCard {
+    max-width: 100%;
+  }
+
+  .mainHeadline {
+    font-size: 42px;
+  }
+
+  .bottomGrid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .footerMain {
+    padding: 80px 5% 35px;
+  }
+
+  .contactSection {
+    gap: 60px;
+    margin-bottom: 90px;
+  }
+
+  .contactCard {
+    padding: 45px 30px;
+  }
+
+  .mainHeadline {
+    font-size: 34px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .dualMenu {
+    gap: 40px;
+  }
+
+  .footerLegal {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .scrollTopBtn {
+    width: 46px;
+    height: 70px;
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .footerMain {
+    padding: 70px 20px 30px;
+  }
+
+  .contactCard {
+    padding: 35px 22px;
+  }
+
+  .contactCard h2 {
+    font-size: 28px;
+  }
+
+  .contactCard p {
+    font-size: 13px;
+  }
+
+  .mainHeadline {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .sendBtn {
+    max-width: 100%;
+  }
+
+  .socialPill {
+    padding: 6px 12px;
+  }
+
+  .socialPill a {
+    width: 30px;
+    height: 30px;
+  }
+
+  .dualMenu {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .subscribeField {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .subscribeField button {
+    padding: 0;
+  }
+
+  .footerLegal {
+    margin-top: 50px;
+    font-size: 11px;
+  }
+
+  .scrollTopBtn {
+    width: 42px;
+    height: 65px;
+    font-size: 20px;
+  }
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+
+@media (max-width: 360px) {
+
+  .mainHeadline {
+    font-size: 24px;
+  }
+
+  .contactCard h2 {
+    font-size: 24px;
+  }
+
+  .contactCard {
+    padding: 30px 18px;
+  }
 }

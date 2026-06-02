@@ -1,3 +1,5 @@
+// JSX CODE:
+
 import React, { useState, useEffect } from "react";
 import "../style/TestimonialSection.css";
 
@@ -86,3 +88,8 @@ const TestimonialSection = () => {
 };
 
 export default TestimonialSection;
+
+// CSS CODE:
+
+
+// make my testimonial section in auto loop slider by  using swiper  and use the classes start with "section_6 "  and the other upcoming class   

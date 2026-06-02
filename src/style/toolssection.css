@@ -1,0 +1,220 @@
+/* ==============================
+   TOOLS SECTION - BASE STYLES
+============================== */
+.toolssec_container {
+    background-color: #ffffff;
+    min-height: 100vh;
+    padding: 40px 15px;
+    color: #000000;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.toolssec_header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.toolssec_header h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #000000;
+    line-height: 1.2;
+}
+
+.toolssec_content-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+/* ==============================
+   TOOL CARDS
+============================== */
+.toolssec_tool-card {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.toolssec_icon-box {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid #C09B50;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #C09B50;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.toolssec_tool-card:hover .toolssec_icon-box {
+    background-color: #C09B50;
+    color: #ffffff;
+}
+
+.toolssec_tool-text h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 5px 0;
+}
+
+.toolssec_tool-text p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #000000;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* ==============================
+   CENTER COLUMN & CIRCLE
+============================== */
+.toolssec_center-column {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    order: -1;
+    /* Mobile: image at top */
+}
+
+.toolssec_circle-wrap {
+    position: relative;
+    width: 260px;
+    height: 260px;
+}
+
+.toolssec_dashed-circle {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #C09B50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+.toolssec_inspector-img {
+    height: 110%;
+    object-fit: contain;
+    z-index: 2;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+}
+
+/* Floating tools */
+.toolssec_float-tool {
+    position: absolute;
+    background: #ffffff;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #C09B50;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #C09B50;
+    z-index: 3;
+}
+
+/* Floating positions */
+.toolssec_float-tool.toolssec_top {
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.toolssec_float-tool.toolssec_right {
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.toolssec_float-tool.toolssec_bottom {
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.toolssec_float-tool.toolssec_left {
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ==============================
+   COLUMNS
+============================== */
+.toolssec_column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Right column text alignment */
+.toolssec_right-column .toolssec_tool-card.toolssec_reverse {
+    flex-direction: column;
+    /* default mobile stacked */
+    text-align: left;
+}
+
+/* ==============================
+   MEDIA QUERIES
+============================== */
+/* Tablet (768px) */
+@media (min-width: 768px) {
+    .toolssec_header h1 {
+        font-size: 2.25rem;
+    }
+
+    .toolssec_content-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .toolssec_center-column {
+        grid-column: span 2;
+        order: 0;
+    }
+
+    .toolssec_circle-wrap {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+    .toolssec_container {
+        padding: 60px 40px;
+    }
+
+    .toolssec_content-grid {
+        grid-template-columns: 1fr 1.2fr 1fr;
+        gap: 30px;
+    }
+
+    .toolssec_center-column {
+        grid-column: span 1;
+        padding: 0;
+    }
+
+    .toolssec_circle-wrap {
+        width: 320px;
+        height: 320px;
+    }
+
+    .toolssec_right-column .toolssec_tool-card.toolssec_reverse {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+}

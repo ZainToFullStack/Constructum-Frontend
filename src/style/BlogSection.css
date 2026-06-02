@@ -77,7 +77,7 @@
 .blog-main-title {
   color: var(--text-black);
 
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 5vw, 2rem);
   font-weight: 500;
   line-height: 1.12;
 }

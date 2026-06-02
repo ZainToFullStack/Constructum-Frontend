@@ -43,7 +43,7 @@ const keyframes = `
 
   const textStyle = {
     fontFamily: '"DM Mono", sans-serif',
-    fontSize: '120px',
+    fontSize: '80px',
     fontWeight: '400',
     letterSpacing: '-0.03em',
     color: '#AA925E',
@@ -54,7 +54,7 @@ const keyframes = `
 
   
 
-  const textContent = "Building dreams / crafting futures ";
+  const textContent = "  Professional Building Assessment Specialists. We help people select durable and sustainable buildings.";
 
   return (
     <>

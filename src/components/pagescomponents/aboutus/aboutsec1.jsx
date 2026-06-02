@@ -1,27 +1,51 @@
 import React from "react";
 import "../../../style/aboutsec1.css";
+import WhyChooseUs from "./homewhyussec5";
 
 const AboutInspection = () => {
     return (
-        <section className="about-inspection">
-            <div className="about-inspection__overlay"></div>
-            <div className="about-inspection__container">
-                <div className="about-inspection__content">
-                    <div className="about-inspection__text">
-                        <span className="about-inspection__subtitle">WHO WE ARE</span>
-                        <h2 className="about-inspection__title">About Us</h2>
-                        <div className="about-inspection__divider"></div>
-                        <p className="about-inspection__description">
-                            We provide professional building and house inspections for buyers and
-                            sellers in Pakistan, ensuring every detail is checked so you can make
-                            informed and confident decisions.
-                        </p>
-                        <div className="about-inspection__accent"></div>
-                    </div>
-                </div>
+       <div className="page-wrapper">
+      {/* <Navbar /> */}
+      
+      <main>
+        {/* Hero Section */}
+        <section className="contact-hero">
+          <div className="overlay"></div>
+          
+          <div className="hero-content">
+            <h1 className="hero-title">About Us</h1>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="hero-bottom-bar">
+            {/* <div className="breadcrumb-box">
+              <span className="breadcrumb-link">Home</span>
+              <span className="dot">.</span>
+              <span className="breadcrumb-current">About</span>
+            </div> */}
+            
+            <div className="stripes-container">
+              <div className="stripe"></div>
+              <div className="stripe"></div>
+              <div className="stripe"></div>
+              <div className="stripe"></div>
             </div>
+          </div>
         </section>
-    );
+
+        {/* Content Sections */}
+        {/* <div className="services-content-flow"> */}
+          {/* <Services />
+          <ServicesSection />
+          <ProcessSection />
+          <OurFeatures /> */}
+          {/* <WhyChooseUs />
+        </div> */}
+      </main>
+
+      {/* <Footer /> */}
+    </div>
+  );
 };
 
 export default AboutInspection;

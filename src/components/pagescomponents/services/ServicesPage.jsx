@@ -23,11 +23,11 @@ const ServicesPage = () => {
 
           {/* Bottom Bar */}
           <div className="hero-bottom-bar">
-            <div className="breadcrumb-box">
+            {/* <div className="breadcrumb-box">
               <span className="breadcrumb-link">Home</span>
               <span className="dot">.</span>
               <span className="breadcrumb-current">Services</span>
-            </div>
+            </div> */}
             
             <div className="stripes-container">
               <div className="stripe"></div>
@@ -39,12 +39,9 @@ const ServicesPage = () => {
         </section>
 
         {/* Content Sections */}
-        <div className="services-content-flow">
-          {/* <Services />
-          <ServicesSection />
-          <ProcessSection />
-          <OurFeatures /> */}
-        </div>
+          {/* <div className="services-content-flow">
+            <ServicesSection />
+          </div> */}
       </main>
 
       {/* <Footer /> */}
